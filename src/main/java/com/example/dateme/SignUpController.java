@@ -15,7 +15,7 @@ import java.io.IOException;
 
 public class SignUpController {
 
-    private final String MAINPAGE = "mainpage/mainpage.fxml";
+    private final String PERFIL = "perfil/perfil.fxml";
 
     private final String LOGIN = "login/login.fxml";
 
@@ -46,7 +46,7 @@ public class SignUpController {
         }
         else {
             //TODO crear usuario, introducirlo en la BBDD
-            cambiarEscena(event, MAINPAGE, 900, 600);
+            cambiarEscena(event, PERFIL, 900, 600);
         }
     }
 
