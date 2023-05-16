@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+    <center>
+        <Pane prefHeight="532.0" prefWidth="910.0" style="-fx-background-color: white; -fx-border-color: #6fa0b5;" BorderPane.alignment="CENTER">
+         <children>
+            <Pane layoutX="416.0" layoutY="77.0" prefHeight="250.0" prefWidth="250.0" style="-fx-border-color: black;">
+               <children>
+                  <ImageView fitHeight="250.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </Pane>
+            <Label layoutX="42.0" layoutY="45.0" prefHeight="32.0" prefWidth="368.0" text="Nombre">
+               <font>
+                  <Font name="System Bold Italic" size="22.0" />
+               </font>
+            </Label>
+            <Label layoutX="42.0" layoutY="77.0" prefHeight="32.0" prefWidth="355.0" text="Apellido1 Apellido2">
+               <font>
+                  <Font name="System Bold Italic" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="42.0" layoutY="109.0" prefHeight="32.0" prefWidth="355.0" text="idusuario">
+               <font>
+                  <Font name="System Italic" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="69.0" layoutY="141.0" prefHeight="32.0" prefWidth="169.0" text="Localidad">
+               <font>
+                  <Font name="System Italic" size="15.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="21.0" fitWidth="23.0" layoutX="42.0" layoutY="146.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../imgs/ubicacion.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="42.0" layoutY="173.0" prefHeight="32.0" prefWidth="169.0" text="Edad">
+               <font>
+                  <Font name="System Italic" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="42.0" layoutY="205.0" prefHeight="32.0" prefWidth="169.0" text="Descripción:">
+               <font>
+                  <Font name="System Italic" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="42.0" layoutY="234.0" prefHeight="114.0" prefWidth="359.0" text="...">
+               <font>
+                  <Font name="System Italic" size="15.0" />
+               </font>
+            </Label>
+            <Button layoutX="423.0" layoutY="390.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="70.0" style="-fx-border-color: black; -fx-background-color: lightgreen;">
+               <graphic>
+                  <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../imgs/like.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="194.0" layoutY="390.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="70.0" style="-fx-border-color: black; -fx-background-color: da4444;">
+               <graphic>
+                  <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../imgs/dislike.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+        </Pane>
+    </center>
+    <top>
+        <Pane prefHeight="100.0" prefWidth="900.0" style="-fx-background-color: #6fa0b5; -fx-border-color: #6fa0b5;" BorderPane.alignment="CENTER">
+            <children>
+                <ImageView fitHeight="76.0" fitWidth="85.0" layoutX="22.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../imgs/cupido.png" />
+                    </image>
+                </ImageView>
+                <Label layoutX="132.0" layoutY="19.0" prefHeight="49.0" prefWidth="209.0" text="DateMe" textFill="WHITE">
+                    <font>
+                        <Font name="Serif Bold Italic" size="56.0" />
+                    </font>
+                </Label>
+                <Label layoutX="139.0" layoutY="21.0" prefHeight="49.0" prefWidth="209.0" text="DateMe">
+                    <font>
+                        <Font name="Serif Bold Italic" size="54.0" />
+                    </font>
+                </Label>
+            </children>
+        </Pane>
+    </top>
+   <left>
+      <Pane prefHeight="489.0" prefWidth="150.0" style="-fx-background-color: c1e1ee;" BorderPane.alignment="CENTER">
+         <children>
+            <Button layoutX="14.0" layoutY="141.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="123.0" style="-fx-background-color: null;">
+               <graphic>
+                  <Pane prefHeight="30.0" prefWidth="30.0" style="-fx-border-color: black;">
+                     <children>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="10.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../imgs/ajustes.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="54.0" layoutY="10.0" prefHeight="17.0" prefWidth="67.0" text="Ajustes">
+                           <font>
+                              <Font name="System Bold Italic" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+               </graphic>
+            </Button>
+            <Button layoutX="14.0" layoutY="84.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="123.0" style="-fx-background-color: null;">
+               <graphic>
+                  <Pane prefHeight="30.0" prefWidth="30.0" style="-fx-border-color: black;">
+                     <children>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="8.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../imgs/chat.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="54.0" layoutY="11.0" prefHeight="17.0" prefWidth="67.0" text="Chats">
+                           <font>
+                              <Font name="System Bold Italic" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+               </graphic>
+            </Button>
+            <Button layoutX="14.0" layoutY="22.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="123.0" style="-fx-background-color: null;">
+               <graphic>
+                  <Pane prefHeight="30.0" prefWidth="30.0" style="-fx-border-color: black;">
+                     <children>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="7.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../imgs/corazon.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="46.0" layoutY="10.0" prefHeight="17.0" prefWidth="67.0" text="Matches">
+                           <font>
+                              <Font name="System Bold Italic" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+               </graphic>
+            </Button>
+         </children>
+      </Pane>
+   </left>
+</BorderPane>

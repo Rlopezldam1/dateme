@@ -1,0 +1,40 @@
+package com.example.dateme;
+
+import java.util.ArrayList;
+
+public class GestorUsuarios {
+    ArrayList<Usuario> usuarios;
+
+    public ArrayList<Usuario> generoCompatible(Usuario.Genero genero) {
+        ArrayList<Usuario> usuariosCompatibles = new ArrayList<>();
+        for (Usuario usuario : usuarios) {
+            if (usuario.getGeneroUsuario().equals(genero)) {
+                usuariosCompatibles.add(usuario);
+            }
+        }
+        return usuariosCompatibles;
+    }
+
+    public ArrayList<Usuario> edadCompatible(ArrayList<ArrayList<Integer>> arraysEdades) {
+        ArrayList<Integer> todasLasEdades = new ArrayList<>();
+        for (ArrayList<Integer> arrayEdades : arraysEdades) {
+            todasLasEdades.addAll(arrayEdades);
+        }
+        ArrayList<Usuario> usuariosCompatibles = new ArrayList<>();
+        for (Usuario usuario : usuarios) {
+            if (todasLasEdades.contains(usuario.getEdadUsuario())) {
+                usuariosCompatibles.add(usuario);
+            }
+        }
+        return usuariosCompatibles;
+    }
+
+    public ArrayList<Usuario> localidadCompatible(String localidad) {
+        ArrayList<Usuario> usuariosCompatibles = new ArrayList<>();
+        for (Usuario usuario : usuarios) {
+            if (usuario.getLocalidadUsuario().equals(localidad));
+            usuariosCompatibles.add(usuario);
+        }
+        return usuariosCompatibles;
+    }
+}

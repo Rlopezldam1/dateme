@@ -3,9 +3,10 @@
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
-<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
@@ -15,7 +16,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dateme.PerfilController">
    <top>
       <Pane prefHeight="90.0" prefWidth="900.0" style="-fx-border-color: black; -fx-background-color: #6fa0b5;" BorderPane.alignment="CENTER">
          <children>
@@ -46,7 +47,7 @@
                         <Font name="System Italic" size="14.0" />
                      </font>
                   </Label>
-                  <TextField layoutX="197.0" layoutY="53.0">
+                  <TextField fx:id="campoNombre" layoutX="197.0" layoutY="53.0">
                      <font>
                         <Font name="System Italic" size="14.0" />
                      </font>
@@ -56,12 +57,12 @@
                         <Font name="System Italic" size="14.0" />
                      </font>
                   </Label>
-                  <TextField layoutX="197.0" layoutY="93.0">
+                  <TextField fx:id="campoApellidos" layoutX="197.0" layoutY="93.0">
                      <font>
                         <Font name="System Italic" size="14.0" />
                      </font>
                   </TextField>
-                  <DatePicker layoutX="199.0" layoutY="178.0" prefHeight="26.0" prefWidth="162.0" />
+                  <DatePicker fx:id="campoFecha" layoutX="199.0" layoutY="178.0" prefHeight="26.0" prefWidth="162.0" />
                   <Label layoutX="72.0" layoutY="167.0" prefHeight="32.0" prefWidth="81.0" text="Fecha de">
                      <font>
                         <Font name="System Italic" size="14.0" />
@@ -77,22 +78,31 @@
                         <Font name="System Italic" size="14.0" />
                      </font>
                   </Label>
-                  <RadioButton layoutX="186.0" layoutY="273.0" mnemonicParsing="false" prefHeight="8.0" prefWidth="100.0" text="Hombre">
+                  <RadioButton fx:id="botonHombre" layoutX="186.0" layoutY="273.0" mnemonicParsing="false" prefHeight="8.0" prefWidth="100.0" text="Hombre">
                      <font>
                         <Font name="System Italic" size="14.0" />
                      </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </RadioButton>
-                  <RadioButton layoutX="296.0" layoutY="274.0" mnemonicParsing="false" prefHeight="8.0" prefWidth="100.0" text="Mujer">
+                  <RadioButton fx:id="botonMujer" layoutX="296.0" layoutY="274.0" mnemonicParsing="false" prefHeight="8.0" prefWidth="100.0" text="Mujer">
                      <font>
                         <Font name="System Italic" size="14.0" />
                      </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </RadioButton>
-                  <RadioButton layoutX="186.0" layoutY="297.0" mnemonicParsing="false" prefHeight="8.0" prefWidth="100.0" text="Otros">
+                  <RadioButton fx:id="botonOtros" layoutX="186.0" layoutY="297.0" mnemonicParsing="false" prefHeight="8.0" prefWidth="100.0" text="Otros">
                      <font>
                         <Font name="System Italic" size="14.0" />
                      </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </RadioButton>
-                  <TextArea layoutX="183.0" layoutY="328.0" prefHeight="154.0" prefWidth="213.0" style="-fx-background-color: lightblue;" />
+                  <TextArea fx:id="campoDescripcion" layoutX="183.0" layoutY="328.0" prefHeight="154.0" prefWidth="213.0" style="-fx-background-color: lightblue;" />
                   <Label layoutX="65.0" layoutY="328.0" prefHeight="32.0" prefWidth="132.0" text="Añade una breve">
                      <font>
                         <Font name="System Italic" size="14.0" />
@@ -113,7 +123,7 @@
                         <Font name="System Italic" size="14.0" />
                      </font>
                   </Label>
-                  <TextField layoutX="197.0" layoutY="131.0">
+                  <TextField fx:id="campoCorreo" layoutX="197.0" layoutY="131.0">
                      <font>
                         <Font name="System Italic" size="14.0" />
                      </font>
@@ -128,7 +138,6 @@
                         <Font name="System Italic" size="14.0" />
                      </font>
                   </Label>
-                  <ChoiceBox layoutX="198.0" layoutY="227.0" prefHeight="26.0" prefWidth="165.0" />
                   <Pane blendMode="SRC_ATOP" layoutX="450.0" layoutY="239.0" prefHeight="194.0" prefWidth="428.0" style="-fx-border-color: black;">
                      <children>
                         <Label alignment="CENTER" layoutX="156.0" layoutY="14.0" prefHeight="39.0" prefWidth="132.0" text="Preferencias">
@@ -146,60 +155,93 @@
                               <Font name="System Italic" size="14.0" />
                            </font>
                         </Label>
-                        <CheckBox layoutX="132.0" layoutY="53.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="105.0" text="Hombres">
+                        <CheckBox fx:id="prefHombre" layoutX="132.0" layoutY="53.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="105.0" text="Hombres">
                            <font>
                               <Font name="System Italic" size="12.0" />
                            </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
                         </CheckBox>
-                        <CheckBox layoutX="262.0" layoutY="52.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="105.0" text="Mujeres">
+                        <CheckBox fx:id="prefMujeres" layoutX="262.0" layoutY="52.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="105.0" text="Mujeres">
                            <font>
                               <Font name="System Italic" size="12.0" />
                            </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
                         </CheckBox>
-                        <CheckBox layoutX="132.0" layoutY="88.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="76.0" text="18 - 25">
+                        <CheckBox fx:id="prefEdad1" layoutX="132.0" layoutY="88.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="76.0" text="18 - 25">
                            <font>
                               <Font name="System Italic" size="12.0" />
                            </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
                         </CheckBox>
-                        <CheckBox layoutX="224.0" layoutY="89.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="76.0" text="26 - 30">
+                        <CheckBox fx:id="prefEdad2" layoutX="224.0" layoutY="89.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="76.0" text="26 - 30">
                            <font>
                               <Font name="System Italic" size="12.0" />
                            </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
                         </CheckBox>
-                        <CheckBox layoutX="329.0" layoutY="88.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="76.0" text="31 - 40">
+                        <CheckBox fx:id="prefEdad3" layoutX="329.0" layoutY="88.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="76.0" text="31 - 40">
                            <font>
                               <Font name="System Italic" size="12.0" />
                            </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
                         </CheckBox>
-                        <CheckBox layoutX="132.0" layoutY="122.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="76.0" text="41 - 50">
+                        <CheckBox fx:id="prefEdad4" layoutX="132.0" layoutY="122.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="76.0" text="41 - 50">
                            <font>
                               <Font name="System Italic" size="12.0" />
                            </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
                         </CheckBox>
-                        <CheckBox layoutX="224.0" layoutY="122.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="76.0" text="51 - 60">
+                        <CheckBox fx:id="prefEdad5" layoutX="224.0" layoutY="122.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="76.0" text="51 - 60">
                            <font>
                               <Font name="System Italic" size="12.0" />
                            </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
                         </CheckBox>
-                        <CheckBox layoutX="329.0" layoutY="122.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="76.0" text="61 - 70">
+                        <CheckBox fx:id="prefEdad6" layoutX="329.0" layoutY="122.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="76.0" text="61 - 70">
                            <font>
                               <Font name="System Italic" size="12.0" />
                            </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
                         </CheckBox>
-                        <CheckBox layoutX="132.0" layoutY="157.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="76.0" text="71 - 80">
+                        <CheckBox fx:id="prefEdad7" layoutX="132.0" layoutY="157.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="76.0" text="71 - 80">
                            <font>
                               <Font name="System Italic" size="12.0" />
                            </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
                         </CheckBox>
-                        <CheckBox layoutX="224.0" layoutY="157.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="76.0" text="81 - 90">
+                        <CheckBox fx:id="prefEdad8" layoutX="224.0" layoutY="157.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="76.0" text="81 - 90">
                            <font>
                               <Font name="System Italic" size="12.0" />
                            </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
                         </CheckBox>
-                        <CheckBox layoutX="329.0" layoutY="157.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="76.0" text="90+">
+                        <CheckBox fx:id="prefEdad9" layoutX="329.0" layoutY="157.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="76.0" text="90+">
                            <font>
                               <Font name="System Italic" size="12.0" />
                            </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
                         </CheckBox>
                      </children>
                   </Pane>
@@ -210,22 +252,88 @@
                   </Label>
                   <Pane layoutX="589.0" layoutY="33.0" prefHeight="150.0" prefWidth="150.0" style="-fx-border-color: black;">
                      <children>
-                        <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fx:id="campoImagen" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" />
                      </children>
                   </Pane>
-                  <Button layoutX="618.0" layoutY="189.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="92.0" style="-fx-background-color: lightblue;" text="Seleccionar">
+                  <Button fx:id="botonSelectImagen" layoutX="618.0" layoutY="189.0" mnemonicParsing="false" onAction="#seleccionarImagen" prefHeight="30.0" prefWidth="92.0" style="-fx-background-color: lightblue;" text="Seleccionar">
                      <font>
                         <Font name="System Bold Italic" size="12.0" />
                      </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </Button>
-                  <Button layoutX="786.0" layoutY="458.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="92.0" style="-fx-background-color: darkcyan; -fx-border-color: black; -fx-background-radius: 20; -fx-border-radius: 20;" text="Continuar">
+                  <Button fx:id="botonContinuar" layoutX="786.0" layoutY="458.0" mnemonicParsing="false" onAction="#actionBotonContinuar" prefHeight="30.0" prefWidth="92.0" style="-fx-background-color: darkcyan; -fx-border-color: black; -fx-background-radius: 20; -fx-border-radius: 20;" text="Continuar">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Button>
+                  <MenuButton fx:id="campoLocalidad" alignment="CENTER" layoutX="201.0" layoutY="226.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="159.0" text="Localidad">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#setLocalidad" text="Andalucía" />
+                        <MenuItem mnemonicParsing="false" onAction="#setLocalidad" text="Aragon" />
+                        <MenuItem mnemonicParsing="false" onAction="#setLocalidad" text="Asturias" />
+                        <MenuItem mnemonicParsing="false" onAction="#setLocalidad" text="Baleares" />
+                        <MenuItem mnemonicParsing="false" onAction="#setLocalidad" text="Canarias" />
+                        <MenuItem mnemonicParsing="false" onAction="#setLocalidad" text="Cantabria" />
+                        <MenuItem mnemonicParsing="false" onAction="#setLocalidad" text="Castilla y Leon" />
+                        <MenuItem mnemonicParsing="false" onAction="#setLocalidad" text="Castilla La Mancha" />
+                        <MenuItem mnemonicParsing="false" onAction="#setLocalidad" text="Cataluña" />
+                        <MenuItem mnemonicParsing="false" onAction="#setLocalidad" text="Comunidad Valenciana" />
+                        <MenuItem mnemonicParsing="false" onAction="#setLocalidad" text="Extremadura" />
+                        <MenuItem mnemonicParsing="false" onAction="#setLocalidad" text="Galicia" />
+                        <MenuItem mnemonicParsing="false" onAction="#setLocalidad" text="Madrid" />
+                        <MenuItem mnemonicParsing="false" onAction="#setLocalidad" text="Murcia (que putada)" />
+                        <MenuItem mnemonicParsing="false" onAction="#setLocalidad" text="Navarra" />
+                        <MenuItem mnemonicParsing="false" onAction="#setLocalidad" text="País Vasco" />
+                        <MenuItem mnemonicParsing="false" onAction="#setLocalidad" text="Rioja" />
+                        <MenuItem mnemonicParsing="false" onAction="#setLocalidad" text="Ceuta" />
+                        <MenuItem mnemonicParsing="false" onAction="#setLocalidad" text="Melilla" />
+                     </items>
+                  </MenuButton>
+                  <Label fx:id="errorNombre" layoutX="130.0" layoutY="49.0" prefHeight="22.0" prefWidth="17.0" textFill="#f50000">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="errorApellidos" layoutX="132.0" layoutY="93.0" prefHeight="17.0" prefWidth="13.0" textFill="#f50000">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="errorCorreo" layoutX="124.0" layoutY="127.0" prefHeight="17.0" prefWidth="13.0" textFill="#f50000">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="errorFecha" layoutX="139.0" layoutY="170.0" prefHeight="17.0" prefWidth="13.0" textFill="#f50000">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="errorLocalidad" layoutX="139.0" layoutY="223.0" prefHeight="17.0" prefWidth="13.0" textFill="#f50000">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="errorGenero" layoutX="124.0" layoutY="266.0" prefHeight="17.0" prefWidth="13.0" textFill="#f50000">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="errorDescripcion" layoutX="159.0" layoutY="320.0" prefHeight="17.0" prefWidth="13.0" textFill="#f50000">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="errorImagen" layoutX="540.0" layoutY="25.0" prefHeight="17.0" prefWidth="13.0" textFill="#f50000">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
                </children>
                <cursor>
-                  <Cursor fx:constant="HAND" />
+                  <Cursor fx:constant="DEFAULT" />
                </cursor>
             </Pane>
          </children>
