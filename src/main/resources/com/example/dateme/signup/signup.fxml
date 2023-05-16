@@ -12,10 +12,15 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="630.0" prefWidth="480.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="630.0" prefWidth="480.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dateme.SignUpController">
    <children>
       <VBox alignment="CENTER" layoutY="236.0" prefHeight="394.0" prefWidth="480.0">
          <children>
+            <Label fx:id="mensajeError" alignment="CENTER" prefHeight="27.0" prefWidth="263.0" text="Usuario/Contraseña incorrecto" textFill="RED" visible="false">
+               <font>
+                  <Font name="System Italic" size="14.0" />
+               </font>
+            </Label>
             <Label alignment="CENTER" prefHeight="30.0" prefWidth="250.0" text="Nombre de usuario">
                <VBox.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -24,7 +29,7 @@
                   <Font name="System Bold Italic" size="18.0" />
                </font>
             </Label>
-            <TextField alignment="CENTER" prefHeight="30.0" prefWidth="400.0" promptText="Nombre de usuario" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-background-color: lightblue; -fx-border-color: darkcyan;">
+            <TextField fx:id="campoIdUsuario" alignment="CENTER" prefHeight="30.0" prefWidth="400.0" promptText="Nombre de usuario" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-background-color: lightblue; -fx-border-color: darkcyan;">
                <VBox.margin>
                   <Insets bottom="5.0" left="60.0" right="60.0" top="5.0" />
                </VBox.margin>
@@ -40,7 +45,7 @@
                   <Font name="System Bold Italic" size="18.0" />
                </font>
             </Label>
-            <PasswordField alignment="CENTER" layoutX="80.0" layoutY="270.0" promptText="Contraseña" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-background-color: lightblue; -fx-border-color: darkcyan;">
+            <PasswordField fx:id="campoContraseña" alignment="CENTER" layoutX="80.0" layoutY="270.0" promptText="Contraseña" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-background-color: lightblue; -fx-border-color: darkcyan;">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
@@ -56,7 +61,7 @@
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </VBox.margin>
             </Label>
-            <PasswordField alignment="CENTER" promptText="Repite la contraseña" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-background-color: lightblue; -fx-border-color: darkcyan;">
+            <PasswordField fx:id="campoRepetirContraseña" alignment="CENTER" promptText="Repite la contraseña" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-background-color: lightblue; -fx-border-color: darkcyan;">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
@@ -64,7 +69,7 @@
                   <Insets bottom="10.0" left="60.0" right="60.0" top="10.0" />
                </VBox.margin>
             </PasswordField>
-            <Button mnemonicParsing="false" prefHeight="36.0" prefWidth="119.0" style="-fx-background-color: #4c8ad0;" text="Crear cuenta" textFill="WHITE">
+            <Button fx:id="botonCrear" mnemonicParsing="false" onAction="#accionCrear" prefHeight="36.0" prefWidth="119.0" style="-fx-background-color: #4c8ad0;" text="Crear cuenta" textFill="WHITE">
                <VBox.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </VBox.margin>
@@ -75,14 +80,21 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Label prefHeight="17.0" prefWidth="96.0" text="Ya tienes cuenta?" textFill="#0c0897">
+            <Button fx:id="botonCuentaExistente" mnemonicParsing="false" onAction="#cambiarLogIn" prefHeight="25.0" prefWidth="120.0" style="-fx-background-color: white;" text="Button">
                <VBox.margin>
                   <Insets bottom="5.0" left="5.0" right="260.0" top="5.0" />
                </VBox.margin>
+               <graphic>
+                  <Label prefHeight="17.0" prefWidth="96.0" text="Ya tienes cuenta?" textFill="#0c0897">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+               </graphic>
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
-            </Label>
+            </Button>
          </children>
          <padding>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
