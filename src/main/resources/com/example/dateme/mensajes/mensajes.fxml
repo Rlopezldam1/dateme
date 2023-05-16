@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.gluonhq.charm.glisten.control.Avatar?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dateme.MensajesController">
+   <children>
+      <TextField fx:id="texto" alignment="CENTER_LEFT" layoutX="30.0" layoutY="352.0" onKeyPressed="#teclaPulsada" prefHeight="32.0" prefWidth="490.0" promptText="Mensaje" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-background-color: lightblue; -fx-border-color: darkcyan;">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </TextField>
+      <Button fx:id="enviar" layoutX="531.0" layoutY="350.0" mnemonicParsing="false" onMouseClicked="#clickPulsado" prefHeight="36.0" prefWidth="56.0" style="-fx-background-color: #4c8ad0;" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <graphic>
+            <ImageView fx:id="back1" fitHeight="27.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../imgs/send.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Avatar fx:id="icono_escritor" layoutX="531.0" layoutY="295.0">
+         <image>
+            <Image url="@../imgs/user.png" />
+         </image>
+      </Avatar>
+      <Label fx:id="texto_escritor" layoutX="331.0" layoutY="278.0" prefHeight="58.0" prefWidth="189.0" style="-fx-background-color: darkgrey; -fx-background-radius: 10;" text="Label">
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </Label>
+      <Avatar fx:id="icono_receptor" layoutX="14.0" layoutY="194.0">
+         <image>
+            <Image url="@../imgs/user.png" />
+         </image>
+      </Avatar>
+      <Label fx:id="texto_receptor" layoutX="69.0" layoutY="189.0" prefHeight="46.0" prefWidth="163.0" style="-fx-background-color: lightblue; -fx-background-radius: 10;" text="Label">
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </Label>
+      <Pane prefHeight="90.0" prefWidth="600.0" style="-fx-border-color: black; -fx-background-color: #6fa0b5;">
+         <children>
+            <Label fx:id="nombre" layoutX="99.0" layoutY="30.0" onMouseClicked="#nombre_click" prefHeight="17.0" prefWidth="163.0" text="Isabel">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Avatar fx:id="icono_principal" layoutX="50.0" layoutY="21.0" onMouseClicked="#icono_principal_click" radius="23.0" style="-fx-background-color: white;">
+               <image>
+                  <Image url="@../imgs/user.png" />
+               </image>
+            </Avatar>
+            <ImageView fx:id="back" fitHeight="27.0" fitWidth="25.0" layoutX="9.0" layoutY="29.0" onMouseClicked="#back_click" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../imgs/back.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+   </children>
+</Pane>
