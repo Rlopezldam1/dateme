@@ -15,7 +15,7 @@ public class Usuario {
     private String idUsuario;
     private String nombreUsuario;
     private String apellidosUsuario;
-    private String contraseña;
+    private String contraseñaUsuario;
     private int edadUsuario;
     private String localidadUsuario;
     private String correoUsuario;
@@ -33,7 +33,7 @@ public class Usuario {
     /*
     * Constructor con parametros de todos los atributos
     */
-    public Usuario(String idUsuario, String nombreUsuario, String apellidosUsuario, String contraseña,
+    public Usuario(String idUsuario, String nombreUsuario, String apellidosUsuario, String contraseñaUsuario,
                    String localidadUsuario, String correoUsuario, LocalDate fechaNacimientoUsuario,
                    String descripcionUsuario, Genero generoUsuario, Image imagenUsuario,
                    ArrayList<Genero> preferenciasGenero, ArrayList<Integer> preferenciasEdad) {
@@ -41,7 +41,7 @@ public class Usuario {
         this.idUsuario = idUsuario;
         this.nombreUsuario = nombreUsuario;
         this.apellidosUsuario = apellidosUsuario;
-        this.contraseña = contraseña;
+        this.contraseñaUsuario = contraseñaUsuario;
         this.localidadUsuario = localidadUsuario;
         this.correoUsuario = correoUsuario;
         this.fechaNacimientoUsuario = fechaNacimientoUsuario;
@@ -69,6 +69,8 @@ public class Usuario {
     public String getApellidosUsuario() {
         return apellidosUsuario;
     }
+
+    public String getContraseñaUsuario() {return contraseñaUsuario; }
 
     public int getEdadUsuario() {
         return edadUsuario;
@@ -113,6 +115,8 @@ public class Usuario {
     public void setApellidosUsuario(String apellidosUsuario) {
         this.apellidosUsuario = apellidosUsuario;
     }
+
+    public void setContraseña(String contraseña) { this.contraseñaUsuario = contraseña; }
 
     public void setEdadUsuario(int edadUsuario) {
         this.edadUsuario = edadUsuario;

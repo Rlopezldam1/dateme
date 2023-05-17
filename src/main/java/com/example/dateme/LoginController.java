@@ -11,6 +11,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class LoginController {
 
@@ -40,7 +41,7 @@ public class LoginController {
 
     @FXML
     void actionIngresar(ActionEvent event) {
-        if (validarCredenciales()) {
+        if (GestorUsuarios.existeUsuario(campoIdUsuario.getText()) != null && validarCredenciales()) {
             cambiarEscena(event, MAINPAGE, 900, 600);
         } else {
             campoIdUsuario.setText("");
@@ -51,7 +52,11 @@ public class LoginController {
 
     public boolean validarCredenciales() {
         //TODO validar credenciales de usuario con la BBDD
-        return true;
+        Usuario usuario = GestorUsuarios.existeUsuario(campoIdUsuario.getText());
+        if (usuario.getIdUsuario().equals(campoIdUsuario.getText()) && usuario.getContraseñaUsuario().equals(campoContraseña.getText())) {
+            return true;
+        }
+        return false;
     }
 
     public void cambiarEscena(ActionEvent event, String fxml, int width, int height) {

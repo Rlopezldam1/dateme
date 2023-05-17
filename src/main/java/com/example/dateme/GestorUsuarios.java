@@ -3,7 +3,7 @@ package com.example.dateme;
 import java.util.ArrayList;
 
 public class GestorUsuarios {
-    ArrayList<Usuario> usuarios;
+    public static ArrayList<Usuario> usuarios = GestionDatosBBDD.extraerUsuarios();
 
     public ArrayList<Usuario> generoCompatible(Usuario.Genero genero) {
         ArrayList<Usuario> usuariosCompatibles = new ArrayList<>();
@@ -13,6 +13,15 @@ public class GestorUsuarios {
             }
         }
         return usuariosCompatibles;
+    }
+
+    public static Usuario existeUsuario(String id) {
+        for (Usuario usuario : usuarios) {
+            if (usuario.getIdUsuario().equals(id)) {
+                return usuario;
+            }
+        }
+        return null;
     }
 
     public ArrayList<Usuario> edadCompatible(ArrayList<ArrayList<Integer>> arraysEdades) {
