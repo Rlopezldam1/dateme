@@ -5,9 +5,8 @@ CREATE TABLE IF NOT EXISTS usuarios
     nombre             TEXT    NOT NULL,
     apellidos          TEXT    NOT NULL,
     contraseña         TEXT    NOT NULL,
-    edad               INTEGER NOT NULL,
     localidad          TEXT    NOT NULL,
-    correo_electrónico TEXT    NOT NULL,
+    correo_electronico TEXT    NOT NULL,
     genero             TEXT    NOT NULL CHECK (genero IN ('Masculino', 'Femenino', 'Otro')),
     preferencia_genero TEXT    NOT NULL CHECK (preferencia_genero IN ('Masculino', 'Femenino', 'Indiferente')),
     fecha_nacimiento   DATE    NOT NULL,
@@ -90,17 +89,17 @@ CREATE TABLE IF NOT EXISTS bloqueos
                           FOREIGN KEY (perfil_id) REFERENCES usuarios(id_usuario) ON DELETE CASCADE
 );
 
-INSERT INTO usuarios (id_usuario, nombre, apellidos, edad, localidad, correo_electrónico, genero, preferencia_genero, fecha_nacimiento, preferencia_edad, descripcion, foto) VALUES
-    ('juanperez', 'Juan', 'Pérez', 28, 'Madrid', 'juanperez@gmail.com', 'Masculino', 'Femenino', '1995-03-15', '26:30', 'Hola, soy Juan, me gusta la música y el deporte', 'juanperez.jpg');
+INSERT INTO usuarios (id_usuario, nombre, apellidos, contraseña, localidad, correo_electronico, genero, preferencia_genero, fecha_nacimiento, preferencia_edad, descripcion, foto) VALUES
+    ('juanperez', 'Juan', 'Pérez', 'root', 'Madrid', 'juanperez@gmail.com', 'Masculino', 'Femenino', '1995-03-15', '26:30', 'Hola, soy Juan, me gusta la música y el deporte', 'juanperez.jpg');
 
-INSERT INTO usuarios (id_usuario, nombre, apellidos, edad, localidad, correo_electrónico, genero, preferencia_genero, fecha_nacimiento, preferencia_edad, descripcion, foto) VALUES
-    ('mariagarcia', 'María', 'García', 22, 'Barcelona', 'mariagarcia@gmail.com', 'Femenino', 'Masculino', '1999-06-20', '18:25-31:40', 'Hola, soy María, me encanta viajar y conocer nuevas culturas', 'mariagarcia.jpg');
+INSERT INTO usuarios (id_usuario, nombre, apellidos, contraseña, localidad, correo_electronico, genero, preferencia_genero, fecha_nacimiento, preferencia_edad, descripcion, foto) VALUES
+    ('mariagarcia', 'María', 'García', 'Barcelona', 'root', 'mariagarcia@gmail.com', 'Femenino', 'Masculino', '1999-06-20', '18:25-31:40', 'Hola, soy María, me encanta viajar y conocer nuevas culturas', 'mariagarcia.jpg');
 
-INSERT INTO usuarios (id_usuario, nombre, apellidos, edad, localidad, correo_electrónico, genero, preferencia_genero, fecha_nacimiento, preferencia_edad, descripcion, foto) VALUES
-    ('alejandrohernandez', 'Alejandro', 'Hernández', 35, 'Sevilla', 'alejandrohdez@gmail.com', 'Masculino', 'Indiferente', '1988-11-10', '31:40', 'Hola, soy Alejandro, me gusta la cocina y el cine', 'alejandrohernandez.jpg');
+INSERT INTO usuarios (id_usuario, nombre, apellidos, contraseña, localidad, correo_electronico, genero, preferencia_genero, fecha_nacimiento, preferencia_edad, descripcion, foto) VALUES
+    ('alejandrohernandez', 'Alejandro', 'Hernández', 'root', 'Sevilla', 'alejandrohdez@gmail.com', 'Masculino', 'Indiferente', '1988-11-10', '31:40', 'Hola, soy Alejandro, me gusta la cocina y el cine', 'alejandrohernandez.jpg');
 
-INSERT INTO usuarios (id_usuario, nombre, apellidos, edad, localidad, correo_electrónico, genero, preferencia_genero, fecha_nacimiento, preferencia_edad, descripcion, foto) VALUES
-    ('sofiamartinez', 'Sofía', 'Martínez', 29, 'Valencia', 'sofiamartinez@gmail.com', 'Femenino', 'Indiferente', '1992-08-05', '26:30', 'Hola, soy Sofía, me gusta el arte y la naturaleza', 'sofiamartinez.jpg');
+INSERT INTO usuarios (id_usuario, nombre, apellidos, contraseña, localidad, correo_electronico, genero, preferencia_genero, fecha_nacimiento, preferencia_edad, descripcion, foto) VALUES
+    ('sofiamartinez', 'Sofía', 'Martínez', 'root', 'Valencia', 'sofiamartinez@gmail.com', 'Femenino', 'Indiferente', '1992-08-05', '26:30', 'Hola, soy Sofía, me gusta el arte y la naturaleza', 'sofiamartinez.jpg');
 
 INSERT INTO match (id_match, user_id_1, user_id_2, fecha_hora_match) VALUES
     (1, 'juanperez', 'mariagarcia', '2023-04-25 12:30:00');
