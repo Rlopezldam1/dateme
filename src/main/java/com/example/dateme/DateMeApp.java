@@ -29,7 +29,7 @@ public class DateMeApp extends Application {
         Scene mensajes = new Scene(mensajesloader.load(), 600, 400);
         Scene historial = new Scene(historialloader.load(), 600, 400);
         dateMe.setTitle("DateMe");
-        dateMe.setScene(historial);
+        dateMe.setScene(mensajes);
         dateMe.setResizable(false);
         dateMe.show();
     }
