@@ -9,6 +9,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dateme.MensajesController">
@@ -33,21 +34,11 @@
             </ImageView>
          </graphic>
       </Button>
-      <Avatar fx:id="icono_escritor" layoutX="531.0" layoutY="295.0">
-         <image>
-            <Image url="@../imgs/user.png" />
-         </image>
-      </Avatar>
       <Label fx:id="texto_escritor" layoutX="331.0" layoutY="278.0" prefHeight="58.0" prefWidth="189.0" style="-fx-background-color: darkgrey; -fx-background-radius: 10;" text="Label">
          <padding>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </padding>
       </Label>
-      <Avatar fx:id="icono_receptor" layoutX="14.0" layoutY="194.0">
-         <image>
-            <Image url="@../imgs/user.png" />
-         </image>
-      </Avatar>
       <Label fx:id="texto_receptor" layoutX="69.0" layoutY="189.0" prefHeight="46.0" prefWidth="163.0" style="-fx-background-color: lightblue; -fx-background-radius: 10;" text="Label">
          <padding>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -60,17 +51,28 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Avatar fx:id="icono_principal" layoutX="50.0" layoutY="21.0" onMouseClicked="#icono_principal_click" radius="23.0" style="-fx-background-color: white;">
-               <image>
-                  <Image url="@../imgs/user.png" />
-               </image>
-            </Avatar>
             <ImageView fx:id="back" fitHeight="27.0" fitWidth="25.0" layoutX="9.0" layoutY="29.0" onMouseClicked="#back_click" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../imgs/back.png" />
                </image>
             </ImageView>
+            <Avatar fx:id="icono_principal" layoutX="50.0" layoutY="21.0" onMouseClicked="#icono_principal_click" radius="23.0">
+               <image>
+                  <Image url="@../imgs/DateMe.png" />
+               </image>
+            </Avatar>
          </children>
       </Pane>
+      <Avatar fx:id="icono_receptor" layoutX="14.0" layoutY="194.0" viewOrder="1.0">
+         <image>
+            <Image url="@../imgs/user.png" />
+         </image>
+      </Avatar>
+      <Avatar fx:id="icono_escritor" layoutX="531.0" layoutY="295.0" viewOrder="1.0">
+         <image>
+            <Image url="@../imgs/user.png" />
+         </image>
+      </Avatar>
+      <VBox fx:id="vboxTexto" layoutY="89.0" prefHeight="257.0" prefWidth="600.0" />
    </children>
 </Pane>

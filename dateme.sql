@@ -1,9 +1,10 @@
 DROP TABLE IF EXISTS usuarios;
 CREATE TABLE IF NOT EXISTS usuarios
 (
-    id_usuario         INTEGER PRIMARY KEY,
+    id_usuario         TEXT PRIMARY KEY,
     nombre             TEXT    NOT NULL,
     apellidos          TEXT    NOT NULL,
+    contraseña          TEXT    NOT NULL,
     edad               INTEGER NOT NULL,
     localidad          TEXT    NOT NULL,
     correo_electrónico TEXT    NOT NULL,
