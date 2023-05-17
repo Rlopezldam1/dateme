@@ -1,6 +1,8 @@
 package com.example.dateme;
 import javafx.scene.image.Image;
 
+import java.io.IOException;
+import java.net.URL;
 import java.sql.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -36,16 +38,12 @@ public class GestionDatosBBDD {
                 String correo = resultados.getString("correo_electronico");
                 String generoStr = resultados.getString("genero");
                 String preferenciaGeneroStr = resultados.getString("preferencia_genero");
-                //TODO solucionar error fechas
-                //Date fechaNacimientoAux = resultados.getDate("fecha_nacimiento");
-                //LocalDate fechaNacimiento = LocalDate.of(fechaNacimientoAux.getYear(), fechaNacimientoAux.getMonth(), fechaNacimientoAux.getDay());
-                LocalDate fechaNacimiento = LocalDate.now();
+                String fechaNacimientoStr = resultados.getString("fecha_nacimiento");
+                LocalDate fechaNacimiento = parseFecha(fechaNacimientoStr);
                 String preferenciaEdadStr = resultados.getString("preferencia_edad");
                 String descripción = resultados.getString("descripcion");
                 String rutaImagen = resultados.getString("foto");
-
-                //TODO gestionar imagenes
-                Image imagen = null;
+                Image imagen = cargarImagen(rutaImagen);
                 Usuario.Genero genero = parseGenero(generoStr);
                 ArrayList<Usuario.Genero> preferenciaGenero = parsePreferenciaGenero(preferenciaGeneroStr);
                 ArrayList<Integer> preferenciaEdad = parsePreferenciaEdad(preferenciaEdadStr);
@@ -58,6 +56,27 @@ public class GestionDatosBBDD {
             e.printStackTrace();
         }
         return listaUsuarios;
+    }
+
+    public static LocalDate parseFecha(String fechaStr) {
+        String[] splitFecha = fechaStr.split("-");
+        int año = Integer.parseInt(splitFecha[0]);
+        int mes = Integer.parseInt(splitFecha[1]);
+        int dia = Integer.parseInt(splitFecha[2]);
+        LocalDate fecha = LocalDate.of(año, mes, dia);
+        return fecha;
+    }
+
+    public static Image cargarImagen(String archivo) {
+        Image imagen = null;
+        String ruta = "fotosperfil/" + archivo;
+        URL url = GestionDatosBBDD.class.getResource(ruta);
+        try {
+            imagen = new Image(url.openStream());
+        } catch (IOException exception) {
+            exception.printStackTrace();
+        }
+        return imagen;
     }
 
     public static ArrayList<Usuario.Genero> parsePreferenciaGenero(String preferencia) {
@@ -122,13 +141,13 @@ public class GestionDatosBBDD {
             sb.append("\tID: ").append(usuario.getIdUsuario()).append("\n");
             sb.append("\tNombre: ").append(usuario.getNombreUsuario());
             sb.append("\tApellidos: ").append(usuario.getApellidosUsuario()).append("\n");
+            sb.append("\tFecha: ").append(usuario.getFechaNacimientoUsuario().toString()).append("\n");
         }
         System.out.println(sb.toString());
     }
 
     public static void main(String[] args) {
         SQLiteConnection.ejecutarScriptSQL("dateme.sql");
-
         GestionDatosBBDD g = new GestionDatosBBDD();
         g.pintar(GestionDatosBBDD.extraerUsuarios());
     }

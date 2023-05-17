@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS usuarios
     correo_electronico TEXT    NOT NULL,
     genero             TEXT    NOT NULL CHECK (genero IN ('Masculino', 'Femenino', 'Otro')),
     preferencia_genero TEXT    NOT NULL CHECK (preferencia_genero IN ('Masculino', 'Femenino', 'Indiferente')),
-    fecha_nacimiento   DATE    NOT NULL,
+    fecha_nacimiento   TEXT    NOT NULL,
     preferencia_edad   TEXT,
     descripcion        TEXT,
     foto               TEXT
@@ -99,7 +99,7 @@ INSERT INTO usuarios (id_usuario, nombre, apellidos, contraseña, localidad, cor
     ('alejandrohernandez', 'Alejandro', 'Hernández', 'root', 'Sevilla', 'alejandrohdez@gmail.com', 'Masculino', 'Indiferente', '1988-11-10', '31:40', 'Hola, soy Alejandro, me gusta la cocina y el cine', 'alejandrohernandez.jpg');
 
 INSERT INTO usuarios (id_usuario, nombre, apellidos, contraseña, localidad, correo_electronico, genero, preferencia_genero, fecha_nacimiento, preferencia_edad, descripcion, foto) VALUES
-    ('sofiamartinez', 'Sofía', 'Martínez', 'root', 'Valencia', 'sofiamartinez@gmail.com', 'Femenino', 'Indiferente', '1992-08-05', '26:30', 'Hola, soy Sofía, me gusta el arte y la naturaleza', 'sofiamartinez.jpg');
+    ('sofiamartinez', 'Sofía', 'Martínez', 'root', 'Valencia', 'sofiamartinez@gmail.com', 'Femenino', 'Indiferente', '1936-08-05', '26:30', 'Hola, soy Sofía, me gusta el arte y la naturaleza', 'sofiamartinez.jpg');
 
 INSERT INTO match (id_match, user_id_1, user_id_2, fecha_hora_match) VALUES
     (1, 'juanperez', 'mariagarcia', '2023-04-25 12:30:00');
