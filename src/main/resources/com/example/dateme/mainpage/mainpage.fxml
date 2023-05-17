@@ -8,11 +8,11 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dateme.MainController">
     <center>
         <Pane prefHeight="532.0" prefWidth="910.0" style="-fx-background-color: white; -fx-border-color: #6fa0b5;" BorderPane.alignment="CENTER">
          <children>
-            <Pane layoutX="416.0" layoutY="77.0" prefHeight="250.0" prefWidth="250.0" style="-fx-border-color: black;">
+            <Pane fx:id="fotoPerfil" layoutX="416.0" layoutY="77.0" prefHeight="250.0" prefWidth="250.0" style="-fx-border-color: black;">
                <children>
                   <ImageView fitHeight="250.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true" />
                </children>
@@ -57,9 +57,9 @@
                   <Font name="System Italic" size="15.0" />
                </font>
             </Label>
-            <Button layoutX="423.0" layoutY="390.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="70.0" style="-fx-border-color: black; -fx-background-color: lightgreen;">
+            <Button fx:id="botonLike" layoutX="423.0" layoutY="390.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="70.0" style="-fx-border-color: black; -fx-background-color: lightgreen;">
                <graphic>
-                  <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="70.0" fitWidth="70.0" onMouseClicked="#likeClick" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../imgs/like.png" />
                      </image>
@@ -68,7 +68,7 @@
             </Button>
             <Button alignment="CENTER" contentDisplay="CENTER" layoutX="194.0" layoutY="390.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="70.0" style="-fx-border-color: black; -fx-background-color: da4444;">
                <graphic>
-                  <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="botonDislike" fitHeight="70.0" fitWidth="70.0" onMouseClicked="#dislikeClick" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../imgs/dislike.png" />
                      </image>
@@ -102,7 +102,7 @@
    <left>
       <Pane prefHeight="489.0" prefWidth="150.0" style="-fx-background-color: c1e1ee;" BorderPane.alignment="CENTER">
          <children>
-            <Button layoutX="14.0" layoutY="141.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="123.0" style="-fx-background-color: null;">
+            <Button fx:id="ajustes" layoutX="14.0" layoutY="141.0" mnemonicParsing="false" onMouseClicked="#ajustesClick" prefHeight="45.0" prefWidth="123.0" style="-fx-background-color: null;">
                <graphic>
                   <Pane prefHeight="30.0" prefWidth="30.0" style="-fx-border-color: black;">
                      <children>
@@ -120,7 +120,7 @@
                   </Pane>
                </graphic>
             </Button>
-            <Button layoutX="14.0" layoutY="84.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="123.0" style="-fx-background-color: null;">
+            <Button fx:id="chats" layoutX="14.0" layoutY="84.0" mnemonicParsing="false" onMouseClicked="#chatsClick" prefHeight="45.0" prefWidth="123.0" style="-fx-background-color: null;">
                <graphic>
                   <Pane prefHeight="30.0" prefWidth="30.0" style="-fx-border-color: black;">
                      <children>
@@ -138,7 +138,7 @@
                   </Pane>
                </graphic>
             </Button>
-            <Button layoutX="14.0" layoutY="22.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="123.0" style="-fx-background-color: null;">
+            <Button fx:id="matches" layoutX="14.0" layoutY="22.0" mnemonicParsing="false" onMouseClicked="#matchesClick" prefHeight="45.0" prefWidth="123.0" style="-fx-background-color: null;">
                <graphic>
                   <Pane prefHeight="30.0" prefWidth="30.0" style="-fx-border-color: black;">
                      <children>
