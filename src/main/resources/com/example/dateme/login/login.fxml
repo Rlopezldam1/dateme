@@ -12,10 +12,15 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="630.0" prefWidth="480.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="630.0" prefWidth="480.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dateme.LoginController">
    <children>
-      <VBox alignment="CENTER" layoutY="253.0" prefHeight="377.0" prefWidth="480.0">
+      <VBox alignment="CENTER" layoutY="253.0" prefHeight="377.0" prefWidth="480.0" style="-fx-background-color: white;">
          <children>
+            <Label fx:id="mensajeError" alignment="CENTER" prefHeight="30.0" prefWidth="267.0" text="Usuario/Contraseña incorrectos" textFill="RED" visible="false">
+               <font>
+                  <Font name="System Italic" size="14.0" />
+               </font>
+            </Label>
             <Label alignment="CENTER" prefHeight="30.0" prefWidth="250.0" text="Nombre de usuario">
                <VBox.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
@@ -24,7 +29,7 @@
                   <Font name="System Bold Italic" size="18.0" />
                </font>
             </Label>
-            <TextField alignment="CENTER" prefHeight="30.0" prefWidth="400.0" promptText="Nombre de usuario" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-background-color: lightblue; -fx-border-color: darkcyan;">
+            <TextField fx:id="campoIdUsuario" alignment="CENTER" prefHeight="30.0" prefWidth="400.0" promptText="Nombre de usuario" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-background-color: lightblue; -fx-border-color: darkcyan;">
                <VBox.margin>
                   <Insets bottom="10.0" left="60.0" right="60.0" top="10.0" />
                </VBox.margin>
@@ -40,7 +45,7 @@
                   <Font name="System Bold Italic" size="18.0" />
                </font>
             </Label>
-            <PasswordField alignment="CENTER" promptText="Contraseña" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-background-color: lightblue; -fx-border-color: darkcyan;">
+            <PasswordField fx:id="campoContraseña" alignment="CENTER" promptText="Contraseña" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-background-color: lightblue; -fx-border-color: darkcyan;">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
@@ -48,7 +53,7 @@
                   <Insets bottom="10.0" left="60.0" right="60.0" top="10.0" />
                </VBox.margin>
             </PasswordField>
-            <Button mnemonicParsing="false" prefHeight="36.0" prefWidth="119.0" style="-fx-background-color: #4c8ad0;" text="Ingresar" textFill="WHITE">
+            <Button fx:id="botonIngresar" mnemonicParsing="false" onAction="#actionIngresar" prefHeight="36.0" prefWidth="119.0" style="-fx-background-color: #4c8ad0;" text="Ingresar" textFill="WHITE">
                <VBox.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </VBox.margin>
@@ -59,14 +64,18 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Label text="Nuevo usuario?" textFill="#0c0897">
+            <Button fx:id="botonCambiarSignup" mnemonicParsing="false" onAction="#cambiarSignup" prefHeight="20.0" prefWidth="102.0" style="-fx-background-color: white;">
+               <graphic>
+                  <Label style="-fx-background-color: white;" text="Nuevo usuario?" textFill="#0c0897">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+               </graphic>
                <VBox.margin>
                   <Insets bottom="5.0" left="5.0" right="265.0" top="5.0" />
                </VBox.margin>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Label>
+            </Button>
          </children>
          <padding>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
