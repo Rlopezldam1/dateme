@@ -42,6 +42,7 @@ public class LoginController {
     @FXML
     void actionIngresar(ActionEvent event) {
         if (GestorUsuarios.existeUsuario(campoIdUsuario.getText()) != null && validarCredenciales()) {
+            GestorUsuarios.usuarioActual = GestorUsuarios.existeUsuario(campoIdUsuario.getText());
             cambiarEscena(event, MAINPAGE, 900, 600);
         } else {
             campoIdUsuario.setText("");

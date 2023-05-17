@@ -1,12 +1,24 @@
 package com.example.dateme;
 
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 
-public class MainController {
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.ResourceBundle;
+
+public class MainController implements Initializable {
+
+    ArrayList<Usuario> usuarios = GestorUsuarios.usuarios;
+
+    private static int posUsuario = 0;
+
+    private Usuario usuarioMostrado;
 
     @FXML
     private Button ajustes;
@@ -21,7 +33,25 @@ public class MainController {
     private Button chats;
 
     @FXML
-    private Pane fotoPerfil;
+    private Label campoNombre;
+
+    @FXML
+    private Label campoApellidos;
+
+    @FXML
+    private Label campoId;
+
+    @FXML
+    private Label campoLocalidad;
+
+    @FXML
+    private Label campoEdad;
+
+    @FXML
+    private Label campoDescripcion;
+
+    @FXML
+    private ImageView campoImagen;
 
     @FXML
     private Button matches;
@@ -38,12 +68,14 @@ public class MainController {
 
     @FXML
     void dislikeClick(MouseEvent event) {
-
+        //TODO metodo para marcar al usuario como visitado
+        siguienteUsuario();
     }
 
     @FXML
     void likeClick(MouseEvent event) {
-
+        //TODO metodo para marcar al usuario como visitado y likeado
+        siguienteUsuario();
     }
 
     @FXML
@@ -51,4 +83,32 @@ public class MainController {
 
     }
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        while (usuarios.get(posUsuario).equals(GestorUsuarios.usuarioActual)) {
+            posUsuario++;
+        }
+        usuarioMostrado = usuarios.get(posUsuario);
+        mostrarInformacionUsuario(usuarioMostrado);
+    }
+
+    public void mostrarInformacionUsuario(Usuario usuario) {
+        campoNombre.setText(usuario.getNombreUsuario());
+        campoApellidos.setText(usuario.getApellidosUsuario());
+        campoId.setText(usuario.getIdUsuario());
+        campoLocalidad.setText(usuario.getLocalidadUsuario());
+        campoEdad.setText(Integer.toString(usuario.getEdadUsuario()));
+        campoDescripcion.setText(usuario.getDescripcionUsuario());
+        campoImagen.setImage(usuario.getImagenUsuario());
+    }
+
+    //TODO solucionar ERROR
+    public void siguienteUsuario() {
+        posUsuario++;
+        while (usuarios.get(posUsuario).equals(GestorUsuarios.usuarioActual)) {
+            posUsuario++;
+        }
+        usuarioMostrado = usuarios.get(posUsuario);
+        mostrarInformacionUsuario(usuarioMostrado);
+    }
 }

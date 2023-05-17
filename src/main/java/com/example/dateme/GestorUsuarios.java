@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class GestorUsuarios {
     public static ArrayList<Usuario> usuarios = GestionDatosBBDD.extraerUsuarios();
+    public static Usuario usuarioActual;
 
     public ArrayList<Usuario> generoCompatible(Usuario.Genero genero) {
         ArrayList<Usuario> usuariosCompatibles = new ArrayList<>();
