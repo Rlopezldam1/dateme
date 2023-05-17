@@ -59,7 +59,7 @@
             </Label>
             <Button fx:id="botonLike" layoutX="423.0" layoutY="390.0" mnemonicParsing="false" onAction="#likeClick" prefHeight="70.0" prefWidth="70.0" style="-fx-border-color: black; -fx-background-color: lightgreen;">
                <graphic>
-                  <ImageView fitHeight="70.0" fitWidth="70.0" onMouseClicked="#likeClick" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../imgs/like.png" />
                      </image>
@@ -68,7 +68,7 @@
             </Button>
             <Button alignment="CENTER" contentDisplay="CENTER" layoutX="194.0" layoutY="390.0" mnemonicParsing="false" onAction="#dislikeClick" prefHeight="70.0" prefWidth="70.0" style="-fx-border-color: black; -fx-background-color: da4444;">
                <graphic>
-                  <ImageView fx:id="botonDislike" fitHeight="70.0" fitWidth="70.0" onMouseClicked="#dislikeClick" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="botonDislike" fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../imgs/dislike.png" />
                      </image>

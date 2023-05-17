@@ -1,5 +1,6 @@
 package com.example.dateme;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -57,29 +58,29 @@ public class MainController implements Initializable {
     private Button matches;
 
     @FXML
-    void ajustesClick(MouseEvent event) {
+    void ajustesClick(ActionEvent event) {
 
     }
 
     @FXML
-    void chatsClick(MouseEvent event) {
+    void chatsClick(ActionEvent event) {
 
     }
 
     @FXML
-    void dislikeClick(MouseEvent event) {
+    void dislikeClick(ActionEvent event) {
         //TODO metodo para marcar al usuario como visitado
         siguienteUsuario();
     }
 
     @FXML
-    void likeClick(MouseEvent event) {
+    void likeClick(ActionEvent event) {
         //TODO metodo para marcar al usuario como visitado y likeado
         siguienteUsuario();
     }
 
     @FXML
-    void matchesClick(MouseEvent event) {
+    void matchesClick(ActionEvent event) {
 
     }
 
@@ -102,11 +103,14 @@ public class MainController implements Initializable {
         campoImagen.setImage(usuario.getImagenUsuario());
     }
 
-    //TODO solucionar ERROR
     public void siguienteUsuario() {
-        posUsuario++;
-        while (usuarios.get(posUsuario).equals(GestorUsuarios.usuarioActual)) {
+        if (posUsuario <= usuarios.size()) {
             posUsuario++;
+        }
+        while (usuarios.get(posUsuario).equals(GestorUsuarios.usuarioActual)) {
+            if (posUsuario <= usuarios.size()) {
+                posUsuario++;
+            }
         }
         usuarioMostrado = usuarios.get(posUsuario);
         mostrarInformacionUsuario(usuarioMostrado);
