@@ -8,17 +8,17 @@ import java.util.List;
 
 public class GestionDatosBBDD {
 
-    private final  Integer[] EDADES1 = {18,19,20,21,22,23,24,25};
-    private final  Integer[] EDADES2 = {26,27,28,29,30};
-    private final  Integer[] EDADES3 = {31,32,33,34,35,36,37,38,39,40};
-    private final  Integer[] EDADES4 = {41,42,43,44,45,46,47,48,49,50};
-    private final  Integer[] EDADES5 = {51,52,53,54,55,56,57,58,59,60};
-    private final  Integer[] EDADES6 = {61,62,63,64,65,66,67,68,69,70};
-    private final  Integer[] EDADES7 = {71,72,73,74,75,76,77,78,79,80};
-    private final  Integer[] EDADES8 = {81,82,83,84,85,86,87,88,89,90};
-    private final  Integer[] EDADES9 = {91,92,93,94,95,96,97,98,99,100};
+    private static final Integer[] EDADES1 = {18,19,20,21,22,23,24,25};
+    private static final Integer[] EDADES2 = {26,27,28,29,30};
+    private static final Integer[] EDADES3 = {31,32,33,34,35,36,37,38,39,40};
+    private static final Integer[] EDADES4 = {41,42,43,44,45,46,47,48,49,50};
+    private static final Integer[] EDADES5 = {51,52,53,54,55,56,57,58,59,60};
+    private static final Integer[] EDADES6 = {61,62,63,64,65,66,67,68,69,70};
+    private static final Integer[] EDADES7 = {71,72,73,74,75,76,77,78,79,80};
+    private static final Integer[] EDADES8 = {81,82,83,84,85,86,87,88,89,90};
+    private static final Integer[] EDADES9 = {91,92,93,94,95,96,97,98,99,100};
 
-    public ArrayList<Usuario> extraerUsuarios() {
+    public static ArrayList<Usuario> extraerUsuarios() {
         ArrayList<Usuario> listaUsuarios = new ArrayList<>();
         Connection connection = SQLiteConnection.conectar();
         Statement statement = null;
@@ -60,7 +60,7 @@ public class GestionDatosBBDD {
         return listaUsuarios;
     }
 
-    public ArrayList<Usuario.Genero> parsePreferenciaGenero(String preferencia) {
+    public static ArrayList<Usuario.Genero> parsePreferenciaGenero(String preferencia) {
         ArrayList<Usuario.Genero> preferenciaGenero = new ArrayList<>();
         if (preferenciaGenero.equals("Masculino")) {
             preferenciaGenero.add(Usuario.Genero.HOMBRE);
@@ -73,7 +73,7 @@ public class GestionDatosBBDD {
         return preferenciaGenero;
     }
 
-    public Usuario.Genero parseGenero(String generoStr) {
+    public static Usuario.Genero parseGenero(String generoStr) {
         Usuario.Genero genero = Usuario.Genero.OTRO;
         if (generoStr.equals("Masculino")) {
             genero = Usuario.Genero.HOMBRE;
@@ -83,7 +83,7 @@ public class GestionDatosBBDD {
         return genero;
     }
 
-    public ArrayList<Integer> parsePreferenciaEdad(String preferencia) {
+    public static ArrayList<Integer> parsePreferenciaEdad(String preferencia) {
         ArrayList<Integer> preferenciaEdad = new ArrayList<>();
         if (preferencia.contains("18:25")) {
             preferenciaEdad.addAll(List.of(EDADES1));
@@ -130,6 +130,6 @@ public class GestionDatosBBDD {
         SQLiteConnection.ejecutarScriptSQL("dateme.sql");
 
         GestionDatosBBDD g = new GestionDatosBBDD();
-        g.pintar(g.extraerUsuarios());
+        g.pintar(GestionDatosBBDD.extraerUsuarios());
     }
 }
