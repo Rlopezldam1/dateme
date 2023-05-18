@@ -38,7 +38,6 @@ CREATE TABLE IF NOT EXISTS likes
     like_id         INTEGER PRIMARY KEY AUTOINCREMENT ,
     user_id         TEXT  NOT NULL,
     perfil_id       TEXT  NOT NULL,
-    fecha_hora_like DATETIME NOT NULL,
     FOREIGN KEY (user_id) REFERENCES usuarios (id_usuario) ON DELETE CASCADE,
     FOREIGN KEY (perfil_id) REFERENCES usuarios (id_usuario) ON DELETE CASCADE
 );
@@ -109,29 +108,29 @@ INSERT INTO usuarios (id_usuario, nombre, apellidos, contraseña, localidad, cor
 INSERT INTO usuarios (id_usuario, nombre, apellidos, contraseña, localidad, correo_electronico, genero, preferencia_genero, fecha_nacimiento, preferencia_edad, descripcion, foto) VALUES
     ('sofiamartinez', 'Sofía', 'Martínez', 'root', 'Valencia', 'sofiamartinez@gmail.com', 'Femenino', 'Indiferente', '1936-08-05', '26:30', 'Hola, soy Sofía, me gusta el arte y la naturaleza', 'sofiamartinez.jpg');
 
-INSERT INTO match (id_match, user_id_1, user_id_2, fecha_hora_match) VALUES
-    (1, 'juanperez', 'mariagarcia', '2023-04-25 12:30:00');
+INSERT INTO match (id_match, user_id_1, user_id_2) VALUES
+    (1, 'juanperez', 'mariagarcia');
 
-INSERT INTO match (id_match, user_id_1, user_id_2, fecha_hora_match) VALUES
-    (2, 'alejandrohernandez', 'juanperez', '2023-04-26 10:45:00');
+INSERT INTO match (id_match, user_id_1, user_id_2) VALUES
+    (2, 'alejandrohernandez', 'juanperez');
 
-INSERT INTO match (id_match, user_id_1, user_id_2, fecha_hora_match) VALUES
-    (3, 'mariagarcia', 'sofiamartinez', '2023-04-27 16:20:00');
+INSERT INTO match (id_match, user_id_1, user_id_2) VALUES
+    (3, 'mariagarcia', 'sofiamartinez');
 
-INSERT INTO match (id_match, user_id_1, user_id_2, fecha_hora_match) VALUES
-    (4, 'juanperez', 'sofiamartinez', '2023-04-28 14:15:00');
+INSERT INTO match (id_match, user_id_1, user_id_2) VALUES
+    (4, 'juanperez', 'sofiamartinez');
 
-INSERT INTO likes (like_id, user_id, perfil_id, fecha_hora_like) VALUES
-    (1, 'juanperez', 'mariagarcia', '2023-04-25 12:30:00');
+INSERT INTO likes (like_id, user_id, perfil_id) VALUES
+    (1, 'juanperez', 'mariagarcia');
 
-INSERT INTO likes (like_id, user_id, perfil_id, fecha_hora_like) VALUES
-    (2, 'alejandrohernandez', 1, '2023-04-26 10:45:00');
+INSERT INTO likes (like_id, user_id, perfil_id) VALUES
+    (2, 'alejandrohernandez', 'juanperez');
 
-INSERT INTO likes (like_id, user_id, perfil_id, fecha_hora_like) VALUES
-    (3, 'mariagarcia', 'juanperez', '2023-04-27 16:20:00');
+INSERT INTO likes (like_id, user_id, perfil_id) VALUES
+    (3, 'mariagarcia', 'juanperez');
 
-INSERT INTO likes (like_id, user_id, perfil_id, fecha_hora_like) VALUES
-    (4, 'juanperez', 'sofiamartinez', '2023-04-28 14:15:00');
+INSERT INTO likes (like_id, user_id, perfil_id) VALUES
+    (4, 'juanperez', 'sofiamartinez');
 
 INSERT INTO interacciones (id_interaccion, user_id, perfil_id, tipo_interaccion, fecha_hora_mesaje) VALUES
     (1, 'juanperez', 'mariagarcia', 'like', '2023-04-25 12:30:00');
