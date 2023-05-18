@@ -14,6 +14,15 @@ CREATE TABLE IF NOT EXISTS usuarios
     descripcion        TEXT,
     foto               TEXT
 );
+DROP TABLE IF EXISTS visitados;
+CREATE TABLE IF NOT EXISTS visitados
+(
+    id_visita INTEGER PRIMARY KEY,
+    user_id1 TEXT NOT NULL,
+    user_id2 TEXT NOT NULL,
+    FOREIGN KEY (user_id1) REFERENCES  usuarios (id_usuario) ON DELETE CASCADE,
+    FOREIGN KEY (user_id2) REFERENCES  usuarios (id_usuario) ON DELETE CASCADE
+);
 DROP TABLE IF EXISTS match;
 CREATE TABLE IF NOT EXISTS match
 (
@@ -93,7 +102,7 @@ INSERT INTO usuarios (id_usuario, nombre, apellidos, contraseña, localidad, cor
     ('juanperez', 'Juan', 'Pérez', 'root', 'Madrid', 'juanperez@gmail.com', 'Masculino', 'Femenino', '1995-03-15', '26:30', 'Hola, soy Juan, me gusta la música y el deporte', 'juanperez.jpg');
 
 INSERT INTO usuarios (id_usuario, nombre, apellidos, contraseña, localidad, correo_electronico, genero, preferencia_genero, fecha_nacimiento, preferencia_edad, descripcion, foto) VALUES
-    ('mariagarcia', 'María', 'García', 'Barcelona', 'root', 'mariagarcia@gmail.com', 'Femenino', 'Masculino', '1999-06-20', '18:25-31:40', 'Hola, soy María, me encanta viajar y conocer nuevas culturas', 'mariagarcia.jpg');
+    ('mariagarcia', 'María', 'García', 'root', 'Barcelona', 'mariagarcia@gmail.com', 'Femenino', 'Masculino', '1999-06-20', '18:25-31:40', 'Hola, soy María, me encanta viajar y conocer nuevas culturas', 'mariagarcia.jpg');
 
 INSERT INTO usuarios (id_usuario, nombre, apellidos, contraseña, localidad, correo_electronico, genero, preferencia_genero, fecha_nacimiento, preferencia_edad, descripcion, foto) VALUES
     ('alejandrohernandez', 'Alejandro', 'Hernández', 'root', 'Sevilla', 'alejandrohdez@gmail.com', 'Masculino', 'Indiferente', '1988-11-10', '31:40', 'Hola, soy Alejandro, me gusta la cocina y el cine', 'alejandrohernandez.jpg');
@@ -184,3 +193,5 @@ INSERT INTO bloqueos (id_bloqueo, user_id, perfil_id, fecha_hora_bloqueo) VALUES
 
 INSERT INTO bloqueos (id_bloqueo, user_id, perfil_id, fecha_hora_bloqueo) VALUES
     (4, 'juanperez', 'sofiamartinez', '2023-04-28 11:55:00');
+INSERT INTO visitados (id_visita, user_id1, user_id2) VALUES
+    (1, 'juanperez', 'mariagarcia');

@@ -35,6 +35,7 @@ public class DateMeApp extends Application {
         dateMe.setScene(mensajes);
         dateMe.setResizable(false);
         dateMe.show();
+        SQLiteConnection.ejecutarScriptSQL("dateme.sql");
     }
 
     public static void cambiarPestana(String ruta, String nombreVentana) {

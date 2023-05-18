@@ -104,11 +104,11 @@ public class MainController implements Initializable {
     }
 
     public void siguienteUsuario() {
-        if (posUsuario <= usuarios.size()) {
+        if (posUsuario <= usuarios.size() - 2) {
             posUsuario++;
         }
         while (usuarios.get(posUsuario).equals(GestorUsuarios.usuarioActual)) {
-            if (posUsuario <= usuarios.size()) {
+            if (posUsuario <= usuarios.size() - 2) {
                 posUsuario++;
             }
         }

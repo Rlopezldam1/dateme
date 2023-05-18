@@ -51,11 +51,35 @@ public class GestionDatosBBDD {
                 Usuario usuario = new Usuario(id_usuario, nombre, apellidos, contraseña, localidad, correo, fechaNacimiento, descripción, genero, imagen, preferenciaGenero, preferenciaEdad);
                 listaUsuarios.add(usuario);
             }
+            statement.close();
+            connection.close();
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return listaUsuarios;
+    }
+
+    public static ArrayList<String> extraerUsuariosVisitados(Usuario usuario) {
+        ArrayList<String> usuariosVisitados = new ArrayList<>();
+        Connection connection = SQLiteConnection.conectar();
+        Statement statement = null;
+        String idUsuario = usuario.getIdUsuario();
+        try {
+            String sql = "SELECT * FROM visitados WHERE user_id1 = '" + idUsuario + "'";
+            statement = connection.createStatement();
+            ResultSet resultados = statement.executeQuery(sql);
+
+            while (resultados.next()) {
+                String idUsuarioVisitado = resultados.getString("user_id2");
+                usuariosVisitados.add(idUsuarioVisitado);
+            }
+            statement.close();
+            connection.close();
+        } catch (SQLException exception) {
+            exception.printStackTrace();
+        }
+        return usuariosVisitados;
     }
 
     public static LocalDate parseFecha(String fechaStr) {
@@ -134,21 +158,5 @@ public class GestionDatosBBDD {
         return preferenciaEdad;
     }
 
-    public void pintar(ArrayList<Usuario> lista) {
-        StringBuilder sb = new StringBuilder();
-        for (Usuario usuario : lista) {
-            sb.append("\t").append("-".repeat(20)).append("\n");
-            sb.append("\tID: ").append(usuario.getIdUsuario()).append("\n");
-            sb.append("\tNombre: ").append(usuario.getNombreUsuario());
-            sb.append("\tApellidos: ").append(usuario.getApellidosUsuario()).append("\n");
-            sb.append("\tFecha: ").append(usuario.getFechaNacimientoUsuario().toString()).append("\n");
-        }
-        System.out.println(sb.toString());
-    }
 
-    public static void main(String[] args) {
-        SQLiteConnection.ejecutarScriptSQL("dateme.sql");
-        GestionDatosBBDD g = new GestionDatosBBDD();
-        g.pintar(GestionDatosBBDD.extraerUsuarios());
-    }
 }
