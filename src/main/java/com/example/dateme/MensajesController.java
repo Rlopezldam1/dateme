@@ -24,9 +24,6 @@ public class MensajesController {
     private ImageView back;
 
     @FXML
-    private ImageView back1;
-
-    @FXML
     private Button enviar;
 
     @FXML
@@ -52,7 +49,7 @@ public class MensajesController {
 
     @FXML
     void back_click(MouseEvent event) {
-
+        cambiarVentana("mainpage/mainpage.fxml", "Inicio");
     }
 
     @FXML
@@ -62,12 +59,12 @@ public class MensajesController {
 
     @FXML
     void icono_principal_click(MouseEvent event) {
-
+        cambiarVentana("perfilUser/perfilUser.fxml", "Usuario");
     }
 
     @FXML
     void nombre_click(MouseEvent event) {
-
+        cambiarVentana("perfilUser/perfilUser.fxml", "Usuario");
     }
 
     @FXML
@@ -97,4 +94,9 @@ public class MensajesController {
             texto.setText("");
         }
     }
+
+    private void cambiarVentana(String ruta, String nombreVentana) {
+        DateMeApp.cambiarPestana(ruta,nombreVentana);
+    }
+
 }
