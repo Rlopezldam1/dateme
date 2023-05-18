@@ -6,6 +6,9 @@ public class GestorUsuarios {
     public static ArrayList<Usuario> usuarios = GestionDatosBBDD.extraerUsuarios();
     public static Usuario usuarioActual;
     public static ArrayList<String> usuariosVisitados;
+    public static ArrayList<String> usuariosLikeados;
+
+    public static ArrayList<String> matches;
 
     public static void inicializarUsuarioActual(String id) {
         usuarioActual = GestorUsuarios.existeUsuario(id);
@@ -15,6 +18,20 @@ public class GestorUsuarios {
     public static void addUsuarioVisitado(Usuario usuarioVisitado) {
         usuariosVisitados.add(usuarioVisitado.getIdUsuario());
         GestionDatosBBDD.insertarUsuarioVisitadoBBDD(usuarioActual, usuarioVisitado);
+    }
+
+    public static void addUsuarioLikeado(Usuario usuarioLikeado) {
+        usuariosLikeados.add(usuarioLikeado.getIdUsuario());
+        GestionDatosBBDD.insertarUsuarioLikeadoBBDD(usuarioActual, usuarioLikeado);
+    }
+
+    public static boolean comprobarMatch(Usuario usuarioLikeado) {
+        return GestionDatosBBDD.comprobarMatch(usuarioActual, usuarioLikeado);
+    }
+
+    public static void addMatch(Usuario usuarioMatch) {
+        matches.add(usuarioMatch.getIdUsuario());
+        GestionDatosBBDD.insertarMatch(usuarioActual, usuarioMatch);
     }
 
     public static boolean consultarUsuarioVisitado(Usuario usuarioVisitado) {

@@ -199,4 +199,69 @@ public class GestionDatosBBDD {
         return false;
     }
 
+    public static boolean comprobarMatch(Usuario usuario, Usuario usuarioLikeado) {
+        String idUsuario = usuario.getIdUsuario();
+        String idUsuarioLikeado = usuarioLikeado.getIdUsuario();
+        Connection connection = SQLiteConnection.conectar();
+        Statement statement = null;
+
+        try {
+            String sql = "SELECT * FROM likes WHERE user_id1 = '" + idUsuarioLikeado + "' and user_id2 = '" + idUsuario + "'";
+            statement = connection.createStatement();
+            ResultSet resultado = statement.executeQuery(sql);
+            if (resultado.next()) {
+                resultado.close();
+                statement.close();
+                connection.close();
+                return true;
+            }
+        } catch (SQLException exception) {
+            exception.printStackTrace();
+        }
+        return false;
+    }
+
+    public static void insertarUsuarioLikeadoBBDD(Usuario usuario, Usuario usuarioLikeado) {
+        String idUsuario = usuario.getIdUsuario();
+        String idUsuarioVisitado = usuarioLikeado.getIdUsuario();
+        Connection connection = SQLiteConnection.conectar();
+        PreparedStatement statement = null;
+        try {
+            String sql = "INSERT INTO likes (user_id1, user_id2) VALUES (?, ?)";
+            statement = connection.prepareStatement(sql);
+            statement.setString(1, idUsuario);
+            statement.setString(2, idUsuarioVisitado);
+            statement.execute();
+            statement.close();
+            connection.close();
+        } catch (SQLException exception) {
+            exception.printStackTrace();
+        }
+    }
+    public static void insertarMatch(Usuario usuario, Usuario otroUsuario) {
+        String idUsuario = usuario.getIdUsuario();
+        String idOtroUsuario = otroUsuario.getIdUsuario();
+        Connection connection = SQLiteConnection.conectar();
+        PreparedStatement statement1 = null;
+        PreparedStatement statement2 = null;
+        try {
+            String sql = "INSERT INTO likes (user_id1, user_id2) VALUES (?, ?)";
+
+            statement1 = connection.prepareStatement(sql);
+            statement1.setString(1, idUsuario);
+            statement1.setString(2, idOtroUsuario);
+            statement1.execute();
+            statement1.close();
+
+            statement2 = connection.prepareStatement(sql);
+            statement2.setString(1, idOtroUsuario);
+            statement2.setString(2, idUsuario);
+            statement2.execute();
+            statement2.close();
+
+            connection.close();
+        } catch (SQLException exception) {
+            exception.printStackTrace();
+        }
+    }
 }

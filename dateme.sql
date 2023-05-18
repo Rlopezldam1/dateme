@@ -29,7 +29,6 @@ CREATE TABLE IF NOT EXISTS match
     id_match         INTEGER PRIMARY KEY AUTOINCREMENT ,
     user_id_1        TEXT  NOT NULL,
     user_id_2        TEXT  NOT NULL,
-    fecha_hora_match DATETIME NOT NULL,
     FOREIGN KEY (user_id_1) REFERENCES usuarios (id_usuario) ON DELETE CASCADE,
     FOREIGN KEY (user_id_2) REFERENCES usuarios (id_usuario) ON DELETE CASCADE
 );

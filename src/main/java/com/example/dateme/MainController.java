@@ -69,16 +69,19 @@ public class MainController implements Initializable {
 
     @FXML
     void dislikeClick(ActionEvent event) {
-        //TODO metodo para marcar al usuario como visitado
         marcarPerfilVisitado();
         siguienteUsuario();
     }
 
     @FXML
     void likeClick(ActionEvent event) {
-        //TODO metodo para marcar al usuario como visitado y likeado
+        marcarPerfilLikeado();
         marcarPerfilVisitado();
-        siguienteUsuario();
+        if (comprobarMatch()) {
+            //TODO mensaje match
+        } else {
+            siguienteUsuario();
+        }
     }
 
     @FXML
@@ -99,6 +102,18 @@ public class MainController implements Initializable {
         GestorUsuarios.addUsuarioVisitado(usuarioMostrado);
     }
 
+    public void marcarPerfilLikeado() {
+        GestorUsuarios.addUsuarioLikeado(usuarioMostrado);
+    }
+
+    public boolean comprobarMatch() {
+        if (GestorUsuarios.comprobarMatch(usuarioMostrado)) {
+            GestorUsuarios.addMatch(usuarioMostrado);
+            return true;
+        }
+        return false;
+    }
+
     public void mostrarInformacionUsuario(Usuario usuario) {
         campoNombre.setText(usuario.getNombreUsuario());
         campoApellidos.setText(usuario.getApellidosUsuario());
@@ -112,11 +127,13 @@ public class MainController implements Initializable {
     public void siguienteUsuario() {
         if (posUsuario <= usuarios.size() - 2) {
             posUsuario++;
+            //TODO Mensaje no se encuentran mas usuarios
         }
         while (usuarios.get(posUsuario).equals(GestorUsuarios.usuarioActual) ||
                 GestorUsuarios.consultarUsuarioVisitado(usuarios.get(posUsuario))) {
             if (posUsuario <= usuarios.size() - 2) {
                 posUsuario++;
+                //TODO Mensaje no se encuentran mas usuarios
             }
         }
         usuarioMostrado = usuarios.get(posUsuario);
