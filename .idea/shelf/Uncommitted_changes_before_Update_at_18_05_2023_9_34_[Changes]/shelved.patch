@@ -1,0 +1,30 @@
+Index: src/main/java/com/example/dateme/DateMeApp.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.dateme;\n\nimport javafx.application.Application;\nimport javafx.fxml.FXMLLoader;\nimport javafx.scene.Scene;\nimport javafx.scene.image.Image;\nimport javafx.stage.Stage;\n\nimport java.io.IOException;\nimport java.net.URL;\n\npublic class DateMeApp extends Application {\n    public static Stage dateMe;\n    @Override\n    public void start(Stage stage) throws IOException {\n        dateMe = stage;\n        URL url = getClass().getResource(\"imgs/cupido.png\");\n        Image icon = new Image(url.openStream());\n        stage.getIcons().add(icon);\n        FXMLLoader loginloader = new FXMLLoader(this.getClass().getResource(\"login/login.fxml\"));\n        FXMLLoader signuploader = new FXMLLoader(this.getClass().getResource(\"signup/signup.fxml\"));\n        FXMLLoader homeloader = new FXMLLoader(this.getClass().getResource(\"home/home.fxml\"));\n        FXMLLoader mensajesloader = new FXMLLoader(this.getClass().getResource(\"mensajes/mensajes.fxml\"));\n        FXMLLoader historialloader = new FXMLLoader(this.getClass().getResource(\"historial/historial.fxml\"));\n        FXMLLoader mainloader = new FXMLLoader(this.getClass().getResource(\"mainpage/mainpage.fxml\"));\n        FXMLLoader perfilUsuarioloader = new FXMLLoader(this.getClass().getResource(\"perfilUsuario/perfilUsuario.fxml\"));\n        Scene login = new Scene(loginloader.load(), 480, 630);\n        Scene signup = new Scene(signuploader.load(), 480, 630);\n        Scene home = new Scene(homeloader.load(), 900, 600);\n        Scene mensajes = new Scene(mensajesloader.load(), 600, 400);\n        Scene historial = new Scene(historialloader.load(), 600, 400);\n        Scene main = new Scene(mainloader.load(), 900, 600);\n        Scene perfilUsuario = new Scene(perfilUsuarioloader.load(), 900, 600);\n        dateMe.setTitle(\"DateMe\");\n        dateMe.setScene(mensajes);\n        dateMe.setResizable(false);\n        dateMe.show();\n        SQLiteConnection.ejecutarScriptSQL(\"dateme.sql\");\n    }\n\n    public static void cambiarPestana(String ruta, String nombreVentana) {\n        try {\n            FXMLLoader pestañaLoader = new FXMLLoader(DateMeApp.class.getResource(ruta));\n            Scene nuevaEscena = new Scene(pestañaLoader.load(), 900, 600);\n            dateMe.setScene(nuevaEscena);\n            dateMe.setTitle(nombreVentana);\n        } catch (IOException e) {\n            e.printStackTrace();\n        }\n    }\n\n\n    public static void main(String[] args) {\n        launch();\n    }\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/dateme/DateMeApp.java b/src/main/java/com/example/dateme/DateMeApp.java
+--- a/src/main/java/com/example/dateme/DateMeApp.java	(revision 94dbf448bbb62d4316ad2e6d2ca5cc082fd1f499)
++++ b/src/main/java/com/example/dateme/DateMeApp.java	(date 1684393761425)
+@@ -23,16 +23,16 @@
+         FXMLLoader mensajesloader = new FXMLLoader(this.getClass().getResource("mensajes/mensajes.fxml"));
+         FXMLLoader historialloader = new FXMLLoader(this.getClass().getResource("historial/historial.fxml"));
+         FXMLLoader mainloader = new FXMLLoader(this.getClass().getResource("mainpage/mainpage.fxml"));
+-        FXMLLoader perfilUsuarioloader = new FXMLLoader(this.getClass().getResource("perfilUsuario/perfilUsuario.fxml"));
++        //FXMLLoader perfilUsuarioloader = new FXMLLoader(this.getClass().getResource("perfilUsuario/perfilUsuario.fxml"));
+         Scene login = new Scene(loginloader.load(), 480, 630);
+         Scene signup = new Scene(signuploader.load(), 480, 630);
+         Scene home = new Scene(homeloader.load(), 900, 600);
+         Scene mensajes = new Scene(mensajesloader.load(), 600, 400);
+         Scene historial = new Scene(historialloader.load(), 600, 400);
+         Scene main = new Scene(mainloader.load(), 900, 600);
+-        Scene perfilUsuario = new Scene(perfilUsuarioloader.load(), 900, 600);
++        //Scene perfilUsuario = new Scene(perfilUsuarioloader.load(), 900, 600);
+         dateMe.setTitle("DateMe");
+-        dateMe.setScene(mensajes);
++        dateMe.setScene(login);
+         dateMe.setResizable(false);
+         dateMe.show();
+         SQLiteConnection.ejecutarScriptSQL("dateme.sql");
