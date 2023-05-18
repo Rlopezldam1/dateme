@@ -70,12 +70,14 @@ public class MainController implements Initializable {
     @FXML
     void dislikeClick(ActionEvent event) {
         //TODO metodo para marcar al usuario como visitado
+        marcarPerfilVisitado();
         siguienteUsuario();
     }
 
     @FXML
     void likeClick(ActionEvent event) {
         //TODO metodo para marcar al usuario como visitado y likeado
+        marcarPerfilVisitado();
         siguienteUsuario();
     }
 
@@ -91,6 +93,10 @@ public class MainController implements Initializable {
         }
         usuarioMostrado = usuarios.get(posUsuario);
         mostrarInformacionUsuario(usuarioMostrado);
+    }
+
+    public void marcarPerfilVisitado() {
+        GestorUsuarios.addUsuarioVisitado(usuarioMostrado);
     }
 
     public void mostrarInformacionUsuario(Usuario usuario) {
