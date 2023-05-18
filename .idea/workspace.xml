@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="943ad00e-9f34-4235-a41f-a06f187e1ea1" name="Changes" comment="Terminada página mensajes con su controlador funcional.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dateme/AjustesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dateme.db" beforeDir="false" afterPath="$PROJECT_DIR$/dateme.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/dateme/mensajes/mensajes.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/dateme/mensajes/mensajes.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/dateme/settings/settings.fxml" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="FxmlFile" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2PHGRoep0C4YGFT1rVYdJhykCln" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_directory_selection": "C:/Users/alumnoMA/Desktop/DateMe3/src/main/java/com/example/dateme",
+    "last_opened_file_path": "C:/Users/alumnoMA/Desktop/DateMe3/src",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.JavaFX"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "sqlite"
+    ],
+    "com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect": [
+      "SQLite"
+    ]
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\alumnoMA\Desktop\DateMe3\src" />
+      <recent name="C:\Users\alumnoMA\Desktop\DateMe3\src\main\resources\com\example\dateme\imgs" />
+      <recent name="C:\Users\alumnoMA\..MASANZ\PROG\UT8\DateMe\src\main\resources\com\signup" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\alumnoMA\Desktop\DateMe3" />
+      <recent name="C:\Users\alumnoMA\Desktop\DateMe3\src\main\resources\com\example\dateme\imgs" />
+      <recent name="C:\Users\alumnoMA\..MASANZ\PROG\UT8\DateMe\src\main\resources\com\example\dateme\home" />
+      <recent name="C:\Users\alumnoMA\..MASANZ\PROG\UT8\DateMe\src\main\resources\com\example\dateme" />
+      <recent name="C:\Users\alumnoMA\..MASANZ\PROG\UT8\DateMe\src\main\resources\com\example\dateme\login" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.DateMeApp">
+    <configuration name="DateMeApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.dateme.DateMeApp" />
+      <module name="DateMe" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.dateme.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SQLiteConnection" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.dateme.SQLiteConnection" />
+      <module name="DateMe" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.dateme.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.DateMeApp" />
+        <item itemvalue="Application.SQLiteConnection" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="943ad00e-9f34-4235-a41f-a06f187e1ea1" name="Changes" comment="" />
+      <created>1683106591637</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1683106591637</updated>
+      <workItem from="1683106593004" duration="6881000" />
+      <workItem from="1683114878330" duration="453000" />
+      <workItem from="1683181253271" duration="2797000" />
+      <workItem from="1683192507538" duration="1354000" />
+      <workItem from="1683197423700" duration="8000" />
+      <workItem from="1683271683553" duration="4520000" />
+      <workItem from="1683614982992" duration="389000" />
+      <workItem from="1683702089988" duration="122000" />
+      <workItem from="1683787318900" duration="2573000" />
+      <workItem from="1683789976953" duration="2247000" />
+      <workItem from="1683792261954" duration="47000" />
+      <workItem from="1683792341166" duration="297000" />
+      <workItem from="1683793129477" duration="606000" />
+      <workItem from="1683876249426" duration="1899000" />
+      <workItem from="1683878162815" duration="196000" />
+      <workItem from="1684139937519" duration="432000" />
+      <workItem from="1684146369326" duration="6192000" />
+      <workItem from="1684217548510" duration="7370000" />
+      <workItem from="1684315598670" duration="3654000" />
+      <workItem from="1684390196683" duration="7996000" />
+    </task>
+    <task id="LOCAL-00001" summary="sql modificado">
+      <created>1684316690661</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1684316690661</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Creado controlador main. Añadidos los id de los objetos de la página main.">
+      <created>1684323115846</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1684323115846</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Terminado método cambiarPestaña, y terminado a falta de pulir detalles controlador de mensajes.">
+      <created>1684391208591</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1684391208592</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Creada vista perfilUsuario, creado controlador de perfilUsuario, metodos realizados, y actualizado DateMeApp">
+      <created>1684392456084</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1684392456084</updated>
+    </task>
+    <task id="LOCAL-00005" summary="creado página chats, controlador de chats, y esuqeleto de ajustes.">
+      <created>1684393858831</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1684393858831</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Terminada página mensajes con su controlador funcional.">
+      <created>1684395988486</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1684395988486</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="sql modificado" />
+    <MESSAGE value="Creado controlador main. Añadidos los id de los objetos de la página main." />
+    <MESSAGE value="Terminado método cambiarPestaña, y terminado a falta de pulir detalles controlador de mensajes." />
+    <MESSAGE value="Creada vista perfilUsuario, creado controlador de perfilUsuario, metodos realizados, y actualizado DateMeApp" />
+    <MESSAGE value="creado página chats, controlador de chats, y esuqeleto de ajustes." />
+    <MESSAGE value="Terminada página mensajes con su controlador funcional." />
+    <option name="LAST_COMMIT_MESSAGE" value="Terminada página mensajes con su controlador funcional." />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

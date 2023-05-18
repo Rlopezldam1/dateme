@@ -52,6 +52,6 @@
             </Avatar>
          </children>
       </Pane>
-      <VBox fx:id="vboxTexto" layoutY="89.0" prefHeight="257.0" prefWidth="600.0" />
+      <VBox fx:id="vboxTexto" layoutY="89.0" maxHeight="260.0" maxWidth="600.0" prefHeight="260.0" prefWidth="600.0" />
    </children>
 </Pane>

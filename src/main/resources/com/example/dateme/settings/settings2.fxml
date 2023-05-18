@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dateme.AjustesController">
+    <top>
+        <Pane prefHeight="100.0" prefWidth="900.0" style="-fx-background-color: #6fa0b5; -fx-border-color: #6fa0b5;" BorderPane.alignment="CENTER">
+            <children>
+                <ImageView fitHeight="76.0" fitWidth="85.0" layoutX="22.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../imgs/cupido.png" />
+                    </image>
+                </ImageView>
+                <Label layoutX="132.0" layoutY="19.0" prefHeight="49.0" prefWidth="209.0" text="DateMe" textFill="WHITE">
+                    <font>
+                        <Font name="Serif Bold Italic" size="56.0" />
+                    </font>
+                </Label>
+                <Label layoutX="139.0" layoutY="21.0" prefHeight="49.0" prefWidth="209.0" text="DateMe">
+                    <font>
+                        <Font name="Serif Bold Italic" size="54.0" />
+                    </font>
+                </Label>
+            </children>
+        </Pane>
+    </top>
+   <left>
+      <Pane prefHeight="489.0" prefWidth="150.0" style="-fx-background-color: c1e1ee;" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="ajustes" layoutX="14.0" layoutY="205.0" mnemonicParsing="false" onAction="#ajustesClick" prefHeight="45.0" prefWidth="123.0" style="-fx-background-color: null;">
+               <graphic>
+                  <Pane prefHeight="30.0" prefWidth="30.0" style="-fx-border-color: black;">
+                     <children>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="10.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../imgs/ajustes.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="54.0" layoutY="10.0" prefHeight="17.0" prefWidth="67.0" text="Ajustes">
+                           <font>
+                              <Font name="System Bold Italic" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+               </graphic>
+            </Button>
+            <Button fx:id="chats" layoutX="14.0" layoutY="146.0" mnemonicParsing="false" onAction="#chatsClick" prefHeight="45.0" prefWidth="123.0" style="-fx-background-color: null;">
+               <graphic>
+                  <Pane prefHeight="30.0" prefWidth="30.0" style="-fx-border-color: black;">
+                     <children>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="8.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../imgs/chat.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="54.0" layoutY="11.0" prefHeight="17.0" prefWidth="67.0" text="Chats">
+                           <font>
+                              <Font name="System Bold Italic" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+               </graphic>
+            </Button>
+            <Button fx:id="matches" layoutX="14.0" layoutY="86.0" mnemonicParsing="false" onAction="#matchesClick" prefHeight="45.0" prefWidth="123.0" style="-fx-background-color: null;">
+               <graphic>
+                  <Pane prefHeight="30.0" prefWidth="30.0" style="-fx-border-color: black;">
+                     <children>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="7.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../imgs/corazon.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="46.0" layoutY="10.0" prefHeight="17.0" prefWidth="67.0" text="Matches">
+                           <font>
+                              <Font name="System Bold Italic" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+               </graphic>
+            </Button>
+            <Button fx:id="inicio" layoutX="14.0" layoutY="24.0" mnemonicParsing="false" onAction="#inicioClick" prefHeight="45.0" prefWidth="123.0" style="-fx-background-color: null;">
+               <graphic>
+                  <Pane prefHeight="30.0" prefWidth="30.0" style="-fx-border-color: black;">
+                     <children>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="10.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../imgs/home.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="54.0" layoutY="10.0" prefHeight="17.0" prefWidth="67.0" text="Inicio">
+                           <font>
+                              <Font name="System Bold Italic" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+               </graphic>
+            </Button>
+         </children>
+      </Pane>
+   </left>
+   <center>
+       <AnchorPane prefHeight="400.0" prefWidth="600.0">
+           <children>
+               <VBox alignment="CENTER" prefHeight="500.0" prefWidth="750.0" spacing="20.0" style="-fx-background-color: #E6F1F7;">
+                   <Label style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #0080FF;" text="Ajustes" />
+               <Button fx:id="botonCrear" mnemonicParsing="false" onAction="#accionCrear" style="-fx-background-color: #4c8ad0;" text="Editar Perfil" textFill="WHITE">
+                  <font>
+                     <Font name="System Bold" size="14.0" />
+                  </font>
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+               </Button>
+               <Button fx:id="botonCrear1" mnemonicParsing="false" onAction="#accionCrear" style="-fx-background-color: #4c8ad0;" text="Cambiar Preferencias" textFill="WHITE">
+                  <font>
+                     <Font name="System Bold" size="14.0" />
+                  </font>
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+               </Button>
+               <Button fx:id="botonCrear11" mnemonicParsing="false" onAction="#accionCrear" style="-fx-background-color: #4c8ad0;" text="Configuración de Privacidad" textFill="WHITE">
+                  <font>
+                     <Font name="System Bold" size="14.0" />
+                  </font>
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+               </Button>
+               <Button fx:id="botonCrear12" mnemonicParsing="false" onAction="#accionCrear" style="-fx-background-color: #4c8ad0;" text="Cerrar Sesión" textFill="WHITE">
+                  <font>
+                     <Font name="System Bold" size="14.0" />
+                  </font>
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+               </Button>
+               </VBox>
+           </children>
+       </AnchorPane>
+   </center>
+</BorderPane>
