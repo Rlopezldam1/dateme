@@ -17,6 +17,10 @@ public class GestorUsuarios {
         GestionDatosBBDD.insertarUsuarioVisitadoBBDD(usuarioActual, usuarioVisitado);
     }
 
+    public static boolean consultarUsuarioVisitado(Usuario usuarioVisitado) {
+        return GestionDatosBBDD.consultarUsuarioVisitadoBBDD(usuarioActual, usuarioVisitado);
+    }
+
     public ArrayList<Usuario> generoCompatible(Usuario.Genero genero) {
         ArrayList<Usuario> usuariosCompatibles = new ArrayList<>();
         for (Usuario usuario : usuarios) {

@@ -113,7 +113,8 @@ public class MainController implements Initializable {
         if (posUsuario <= usuarios.size() - 2) {
             posUsuario++;
         }
-        while (usuarios.get(posUsuario).equals(GestorUsuarios.usuarioActual)) {
+        while (usuarios.get(posUsuario).equals(GestorUsuarios.usuarioActual) ||
+                GestorUsuarios.consultarUsuarioVisitado(usuarios.get(posUsuario))) {
             if (posUsuario <= usuarios.size() - 2) {
                 posUsuario++;
             }

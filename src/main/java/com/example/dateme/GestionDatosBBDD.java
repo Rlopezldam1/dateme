@@ -51,6 +51,7 @@ public class GestionDatosBBDD {
                 Usuario usuario = new Usuario(id_usuario, nombre, apellidos, contraseña, localidad, correo, fechaNacimiento, descripción, genero, imagen, preferenciaGenero, preferenciaEdad);
                 listaUsuarios.add(usuario);
             }
+            resultados.close();
             statement.close();
             connection.close();
 
@@ -174,6 +175,28 @@ public class GestionDatosBBDD {
         } catch (SQLException exception) {
             exception.printStackTrace();
         }
+    }
+
+    public static boolean consultarUsuarioVisitadoBBDD(Usuario usuario, Usuario usuarioVisitado) {
+        String idUsuario = usuario.getIdUsuario();
+        String idUsuarioVisitado = usuarioVisitado.getIdUsuario();
+        Connection connection = SQLiteConnection.conectar();
+        Statement statement = null;
+
+        try {
+            String sql = "SELECT * FROM visitados WHERE user_id1 = '" + idUsuario + "' and user_id2 = '" + idUsuarioVisitado + "'";
+            statement = connection.createStatement();
+            ResultSet resultado = statement.executeQuery(sql);
+            if (resultado.next()) {
+                resultado.close();
+                statement.close();
+                connection.close();
+                return true;
+            }
+        } catch (SQLException exception) {
+            exception.printStackTrace();
+        }
+        return false;
     }
 
 }
