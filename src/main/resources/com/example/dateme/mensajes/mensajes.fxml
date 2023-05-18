@@ -27,7 +27,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
          <graphic>
-            <ImageView fx:id="back1" fitHeight="27.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="27.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../imgs/send.png" />
                </image>

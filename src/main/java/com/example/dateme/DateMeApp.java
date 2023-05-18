@@ -8,7 +8,6 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.function.IntConsumer;
 
 public class DateMeApp extends Application {
     public static Stage dateMe;
@@ -36,9 +35,17 @@ public class DateMeApp extends Application {
         dateMe.show();
     }
 
-    public static void cambiarPestana(String ruta) {
-
+    public static void cambiarPestana(String ruta, String nombreVentana) {
+        try {
+            FXMLLoader pestañaLoader = new FXMLLoader(DateMeApp.class.getResource(ruta));
+            Scene nuevaEscena = new Scene(pestañaLoader.load(), 900, 600);
+            dateMe.setScene(nuevaEscena);
+            dateMe.setTitle(nombreVentana);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
+
 
     public static void main(String[] args) {
         launch();
