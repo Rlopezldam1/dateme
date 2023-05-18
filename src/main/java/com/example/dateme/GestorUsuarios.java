@@ -12,11 +12,6 @@ public class GestorUsuarios {
         usuariosVisitados = GestionDatosBBDD.extraerUsuariosVisitados(usuarioActual);
     }
 
-    public static void addUsuarioVisitado(Usuario usuarioVisitado) {
-        usuariosVisitados.add(usuarioVisitado.getIdUsuario());
-        GestionDatosBBDD.insertarUsuarioVisitadoBBDD(usuarioActual, usuarioVisitado);
-    }
-
     public ArrayList<Usuario> generoCompatible(Usuario.Genero genero) {
         ArrayList<Usuario> usuariosCompatibles = new ArrayList<>();
         for (Usuario usuario : usuarios) {

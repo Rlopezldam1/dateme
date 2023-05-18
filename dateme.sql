@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS usuarios
 DROP TABLE IF EXISTS visitados;
 CREATE TABLE IF NOT EXISTS visitados
 (
-    id_visita INTEGER PRIMARY KEY AUTOINCREMENT ,
+    id_visita INTEGER PRIMARY KEY,
     user_id1 TEXT NOT NULL,
     user_id2 TEXT NOT NULL,
     FOREIGN KEY (user_id1) REFERENCES  usuarios (id_usuario) ON DELETE CASCADE,
@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS visitados
 DROP TABLE IF EXISTS match;
 CREATE TABLE IF NOT EXISTS match
 (
-    id_match         INTEGER PRIMARY KEY AUTOINCREMENT ,
+    id_match         INTEGER PRIMARY KEY,
     user_id_1        TEXT  NOT NULL,
     user_id_2        TEXT  NOT NULL,
     fecha_hora_match DATETIME NOT NULL,
@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS match
 DROP TABLE IF EXISTS likes;
 CREATE TABLE IF NOT EXISTS likes
 (
-    like_id         INTEGER PRIMARY KEY AUTOINCREMENT ,
+    like_id         INTEGER PRIMARY KEY,
     user_id         TEXT  NOT NULL,
     perfil_id       TEXT  NOT NULL,
     fecha_hora_like DATETIME NOT NULL,
@@ -46,7 +46,7 @@ CREATE TABLE IF NOT EXISTS likes
 DROP TABLE IF EXISTS interacciones;
 CREATE TABLE IF NOT EXISTS interacciones
 (
-    id_interaccion    INTEGER PRIMARY KEY AUTOINCREMENT ,
+    id_interaccion    INTEGER PRIMARY KEY,
     user_id           TEXT  NOT NULL,
     perfil_id         TEXT  NOT NULL,
     tipo_interaccion  TEXT     NOT NULL CHECK (tipo_interaccion IN('like', 'match', 'perfil_visto', 'mensaje', 'bloqueo', 'reporte', 'izquierda', 'derecha', 'compartir_perfil')),
@@ -57,7 +57,7 @@ CREATE TABLE IF NOT EXISTS interacciones
 DROP TABLE IF EXISTS mensajes;
 CREATE TABLE IF NOT EXISTS mensajes
 (
-    id_mensaje        INTEGER PRIMARY KEY AUTOINCREMENT ,
+    id_mensaje        INTEGER PRIMARY KEY,
     user_id           TEXT  NOT NULL,
     perfil_id         TEXT  NOT NULL,
     mensaje           TEXT     NOT NULL,
@@ -69,7 +69,7 @@ CREATE TABLE IF NOT EXISTS mensajes
 DROP TABLE IF EXISTS notificaciones;
 CREATE TABLE IF NOT EXISTS notificaciones
 (
-    id_notificacion         INTEGER PRIMARY KEY AUTOINCREMENT ,
+    id_notificacion         INTEGER PRIMARY KEY,
     user_id                 TEXT  NOT NULL,
     tipo_notificacion       TEXT     NOT NULL CHECK (tipo_notificacion IN ('like', 'match', 'mensaje', 'publicidad', 'actualización')),
     fecha_hora_notificacion DATETIME NOT NULL,
@@ -78,7 +78,7 @@ CREATE TABLE IF NOT EXISTS notificaciones
 DROP TABLE IF EXISTS reportes;
 CREATE TABLE IF NOT EXISTS reportes
 (
-    id_reporte            INTEGER PRIMARY KEY AUTOINCREMENT ,
+    id_reporte            INTEGER PRIMARY KEY,
     user_id               TEXT  NOT NULL,
     perfil_id             TEXT  NOT NULL,
     razon_denuncia        TEXT     NOT NULL,
@@ -90,7 +90,7 @@ CREATE TABLE IF NOT EXISTS reportes
 DROP TABLE IF EXISTS bloqueos;
 CREATE TABLE IF NOT EXISTS bloqueos
 (
-                          id_bloqueo INTEGER PRIMARY KEY AUTOINCREMENT ,
+                          id_bloqueo INTEGER PRIMARY KEY,
                           user_id TEXT NOT NULL,
                           perfil_id TEXT NOT NULL,
                           fecha_hora_bloqueo DATETIME NOT NULL,
@@ -193,3 +193,5 @@ INSERT INTO bloqueos (id_bloqueo, user_id, perfil_id, fecha_hora_bloqueo) VALUES
 
 INSERT INTO bloqueos (id_bloqueo, user_id, perfil_id, fecha_hora_bloqueo) VALUES
     (4, 'juanperez', 'sofiamartinez', '2023-04-28 11:55:00');
+INSERT INTO visitados (id_visita, user_id1, user_id2) VALUES
+    (1, 'juanperez', 'mariagarcia');
