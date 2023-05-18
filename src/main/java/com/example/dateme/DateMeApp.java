@@ -8,7 +8,6 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.function.IntConsumer;
 
 public class DateMeApp extends Application {
     public static Stage dateMe;
@@ -34,6 +33,7 @@ public class DateMeApp extends Application {
         dateMe.setScene(login);
         dateMe.setResizable(false);
         dateMe.show();
+        SQLiteConnection.ejecutarScriptSQL("dateme.sql");
     }
 
     public static void cambiarPestana(String ruta) {
