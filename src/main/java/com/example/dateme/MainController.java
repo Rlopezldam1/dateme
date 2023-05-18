@@ -129,8 +129,8 @@ public class MainController implements Initializable {
             posUsuario++;
             //TODO Mensaje no se encuentran mas usuarios
         }
-        while (usuarios.get(posUsuario).equals(GestorUsuarios.usuarioActual) ||
-                GestorUsuarios.consultarUsuarioVisitado(usuarios.get(posUsuario))) {
+        while (usuarios.get(posUsuario).equals(GestorUsuarios.usuarioActual)) {
+               // || GestorUsuarios.consultarUsuarioVisitado(usuarios.get(posUsuario))) {
             if (posUsuario <= usuarios.size() - 2) {
                 posUsuario++;
                 //TODO Mensaje no se encuentran mas usuarios

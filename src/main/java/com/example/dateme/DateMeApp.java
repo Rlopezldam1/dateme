@@ -29,13 +29,11 @@ public class DateMeApp extends Application {
         Scene home = new Scene(homeloader.load(), 900, 600);
         Scene mensajes = new Scene(mensajesloader.load(), 600, 400);
         Scene historial = new Scene(historialloader.load(), 600, 400);
-        Scene main = new Scene(mainloader.load(), 900, 600);
         //Scene perfilUsuario = new Scene(perfilUsuarioloader.load(), 900, 600);
         dateMe.setTitle("DateMe");
         dateMe.setScene(login);
         dateMe.setResizable(false);
         dateMe.show();
-        SQLiteConnection.ejecutarScriptSQL("dateme.sql");
     }
 
     public static void cambiarPestana(String ruta, String nombreVentana) {
