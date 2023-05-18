@@ -2,18 +2,27 @@ package com.example.dateme;
 
 import com.gluonhq.charm.glisten.control.Avatar;
 import javafx.fxml.FXML;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Priority;
+import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Paint;
+
+import java.io.IOException;
+import java.net.URL;
 import java.util.Objects;
+
+import static java.lang.Double.MAX_VALUE;
 
 public class MensajesController {
 
@@ -53,7 +62,7 @@ public class MensajesController {
     }
 
     @FXML
-    void clickPulsado(MouseEvent event) {
+    void clickPulsado(MouseEvent event) throws IOException {
         comprobarEnviarTexto();
     }
 
@@ -68,28 +77,34 @@ public class MensajesController {
     }
 
     @FXML
-    void teclaPulsada(KeyEvent event) {
+    void teclaPulsada(KeyEvent event) throws IOException {
         KeyCode caracter = event.getCode();
         if (caracter == KeyCode.ENTER){
             comprobarEnviarTexto();
         }
     }
-    void comprobarEnviarTexto(){
+    void comprobarEnviarTexto() throws IOException {
         if (!Objects.equals(texto.getText(), "")){
             HBox hbox = new HBox();
+            hbox.setPadding(new Insets(15,0,0,0));
             ImageView iv = new ImageView();
-            iv.setLayoutX(530);
+            iv.setFitWidth(50);
+            iv.setFitHeight(50);
+            URL url = getClass().getResource("imgs/user.png");
+            Image img = new Image(url.openStream());
+            iv.setImage(img);
             Label label = new Label();
-            label.setLayoutX(330);
-            label.setMaxWidth(500);
+            HBox.setHgrow(label, Priority.ALWAYS);
+            label.setPadding(new Insets(0,0,0,20));
+            HBox.setMargin(label,new Insets(0,25,0,25));
+            label.setMaxHeight(MAX_VALUE);
+            label.setMaxWidth(MAX_VALUE);
             label.setText(texto.getText());
             label.setTextFill(Paint.valueOf("black"));
-            label.autosize();
-            label.setStyle("-fx-background-color:  darkgrey");
-            label.setStyle("-fx-background-radius:  10");
             label.setAlignment(Pos.CENTER_LEFT);
             hbox.getChildren().add(iv);
             hbox.getChildren().add(label);
+            label.setStyle("-fx-background-color: darkgrey; -fx-background-radius: 10;");
             vboxTexto.getChildren().add(hbox);
             texto.setText("");
         }
