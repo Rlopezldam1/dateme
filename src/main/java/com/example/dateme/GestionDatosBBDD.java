@@ -158,5 +158,22 @@ public class GestionDatosBBDD {
         return preferenciaEdad;
     }
 
+    public static void insertarUsuarioVisitadoBBDD(Usuario usuario, Usuario usuarioVisitado) {
+        String idUsuario = usuario.getIdUsuario();
+        String idUsuarioVisitado = usuarioVisitado.getIdUsuario();
+        Connection connection = SQLiteConnection.conectar();
+        PreparedStatement statement = null;
+        try {
+            String sql = "INSERT INTO visitados (user_id1, user_id2) VALUES (?, ?)";
+            statement = connection.prepareStatement(sql);
+            statement.setString(1, idUsuario);
+            statement.setString(2, idUsuarioVisitado);
+            statement.execute();
+            statement.close();
+            connection.close();
+        } catch (SQLException exception) {
+            exception.printStackTrace();
+        }
+    }
 
 }
