@@ -1,0 +1,18 @@
+Index: dateme.sql
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/dateme.sql b/dateme.sql
+--- a/dateme.sql	
++++ b/dateme.sql	
+@@ -192,4 +192,6 @@
+     (3, 'mariagarcia', 'sofiamartinez', '2023-04-29 20:30:00');
+ 
+ INSERT INTO bloqueos (id_bloqueo, user_id, perfil_id, fecha_hora_bloqueo) VALUES
+-    (4, 'juanperez', 'sofiamartinez', '2023-04-28 11:55:00');
+\ No newline at end of file
++    (4, 'juanperez', 'sofiamartinez', '2023-04-28 11:55:00');
++INSERT INTO visitados (user_id1, user_id2) VALUES
++    ('juanperez', 'alejandrohernandez');
+\ No newline at end of file
