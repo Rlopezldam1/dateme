@@ -30,9 +30,10 @@ public class DateMeApp extends Application {
         Scene historial = new Scene(historialloader.load(), 900, 600);
         //Scene perfilUsuario = new Scene(perfilUsuarioloader.load(), 900, 600);
         dateMe.setTitle("DateMe");
-        dateMe.setScene(mensajes);
+        dateMe.setScene(signup);
         dateMe.setResizable(false);
         dateMe.show();
+        SQLiteConnection.main(null);
     }
 
     public static void cambiarPestana(String ruta, String nombreVentana, int width, int height) {

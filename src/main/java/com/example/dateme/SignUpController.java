@@ -69,7 +69,9 @@ public class SignUpController {
     * misma en los dos campos.
     */
     public boolean validarCampos() {
-        //TODO validar que el idUsuario no esta en la BBDD
+        if (GestorUsuarios.existeUsuario(campoIdUsuario.getText()) != null) {
+            return false;
+        }
         String idUsuario = campoIdUsuario.getText();
         String contraseña = campoContraseña.getText();
         String contraseñaRepetida = campoRepetirContraseña.getText();

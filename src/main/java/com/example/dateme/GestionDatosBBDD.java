@@ -141,7 +141,9 @@ public class GestionDatosBBDD {
         String ruta = "fotosperfil/" + archivo;
         URL url = GestionDatosBBDD.class.getResource(ruta);
         try {
-            imagen = new Image(url.openStream());
+            if (url != null) {
+                imagen = new Image(url.openStream());
+            }
         } catch (IOException exception) {
             exception.printStackTrace();
         }
