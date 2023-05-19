@@ -19,6 +19,10 @@ public class SignUpController {
 
     private final String LOGIN = "login/login.fxml";
 
+    public static String idUsuario;
+
+    public static String contraseñaUsuario;
+
     @FXML
     private Button botonCrear;
 
@@ -45,7 +49,8 @@ public class SignUpController {
             campoRepetirContraseña.setText("");
         }
         else {
-            //TODO crear usuario, introducirlo en la BBDD
+            idUsuario = campoIdUsuario.getText();
+            contraseñaUsuario = campoContraseña.getText();
             cambiarEscena(event, PERFIL, 900, 600);
         }
     }

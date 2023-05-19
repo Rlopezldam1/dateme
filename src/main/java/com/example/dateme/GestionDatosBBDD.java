@@ -203,6 +203,22 @@ public class GestionDatosBBDD {
         return preferenciaEdad;
     }
 
+    public static void insertarUsuario(String[] infoUsuario) {
+        Connection connection = SQLiteConnection.conectar();
+        PreparedStatement statement = null;
+        try {
+            String sql = "INSERT INTO usuarios VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            statement = connection.prepareStatement(sql);
+            for (int i = 1; i <= 12; i++) {
+                statement.setString(i, infoUsuario[i - 1]);
+            }
+            statement.execute();
+            statement.close();
+        } catch (SQLException exception) {
+            exception.printStackTrace();
+        }
+    }
+
     public static void insertarUsuarioVisitadoBBDD(Usuario usuario, Usuario usuarioVisitado) {
         String idUsuario = usuario.getIdUsuario();
         String idUsuarioVisitado = usuarioVisitado.getIdUsuario();

@@ -32,6 +32,8 @@ public class PerfilController implements Initializable {
     private final  Integer[] EDADES8 = {81,82,83,84,85,86,87,88,89,90};
     private final  Integer[] EDADES9 = {91,92,93,94,95,96,97,98,99,100};
     private Image fotoPerfil;
+    private String idUsuario = SignUpController.idUsuario;
+    private String contraseña = SignUpController.contraseñaUsuario;
     @FXML
     private Button botonContinuar;
     @FXML
@@ -158,7 +160,8 @@ public class PerfilController implements Initializable {
         Image fotoPerfil = campoImagen.getImage();
         ArrayList<Usuario.Genero> preferenciaGenero = setPreferenciaGenero();
         ArrayList<Integer> preferenciaEdad = setPreferenciaEdad();
-        //TODO crear usuario (id?)
+        Usuario usuario = new Usuario(idUsuario, nombre, apellidos, contraseña, localidad, correo, fechaNacimiento, descripcion, genero, fotoPerfil, preferenciaGenero, preferenciaEdad);
+        GestorUsuarios.addUsuario(usuario);
     }
 
     public Usuario.Genero setGeneroUsuario() {
