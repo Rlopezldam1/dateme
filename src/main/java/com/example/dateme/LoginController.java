@@ -52,7 +52,6 @@ public class LoginController {
     }
 
     public boolean validarCredenciales() {
-        //TODO validar credenciales de usuario con la BBDD
         Usuario usuario = GestorUsuarios.existeUsuario(campoIdUsuario.getText());
         if (usuario.getIdUsuario().equals(campoIdUsuario.getText()) && usuario.getContraseñaUsuario().equals(campoContraseña.getText())) {
             return true;

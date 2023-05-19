@@ -120,16 +120,16 @@ INSERT INTO match (id_match, user_id_1, user_id_2) VALUES
 INSERT INTO match (id_match, user_id_1, user_id_2) VALUES
     (4, 'juanperez', 'sofiamartinez');
 /*
-INSERT INTO likes (like_id, user_id, perfil_id) VALUES
+INSERT INTO likes (like_id, user_id_1, user_id_2) VALUES
     (1, 'juanperez', 'mariagarcia');
 
-INSERT INTO likes (like_id, user_id, perfil_id) VALUES
+INSERT INTO likes (like_id, user_id_1, user_id_2) VALUES
     (2, 'alejandrohernandez', 'juanperez');
 
-INSERT INTO likes (like_id, user_id, perfil_id) VALUES
+INSERT INTO likes (like_id, user_id_1, user_id_2) VALUES
     (3, 'mariagarcia', 'juanperez');
 
-INSERT INTO likes (like_id, user_id, perfil_id) VALUES
+INSERT INTO likes (like_id, user_id_1, user_id_2) VALUES
     (4, 'juanperez', 'sofiamartinez');
 */
 INSERT INTO interacciones (id_interaccion, user_id, perfil_id, tipo_interaccion, fecha_hora_mesaje) VALUES
