@@ -43,22 +43,22 @@ public class perfilUsuarioController {
 
     @FXML
     void ajustesClick(MouseEvent event) {
-        DateMeApp.cambiarPestana("ajustes/ajustes.fxml","Ajustes");
+        DateMeApp.cambiarPestana("settings/settings.fxml","Ajustes",900,600);
     }
 
     @FXML
     void chatsClick(MouseEvent event) {
-        DateMeApp.cambiarPestana("chats/chats.fxml","Chats");
+        DateMeApp.cambiarPestana("chats/chats.fxml","Chats",900,600);
     }
 
     @FXML
     void inicioClick(MouseEvent event) {
-        DateMeApp.cambiarPestana("mainpage/mainpage.fxml","Inicio");
+        DateMeApp.cambiarPestana("mainpage/mainpage.fxml","Inicio",900,600);
     }
 
     @FXML
     void matchesClick(MouseEvent event) {
-        DateMeApp.cambiarPestana("matches/matches.fxml","Matches");
+        DateMeApp.cambiarPestana("matches/matches.fxml","Matches",900,600);
     }
 
 }

@@ -1,6 +1,7 @@
 package com.example.dateme;
 
 import com.gluonhq.charm.glisten.control.Avatar;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -62,7 +63,7 @@ public class MensajesController {
 
     @FXML
     void back_click(MouseEvent event) {
-        DateMeApp.cambiarPestana("mainpage/mainpage.fxml", "Inicio");
+        DateMeApp.cambiarPestana("mainpage/mainpage.fxml", "Inicio",900,600);
     }
 
     @FXML
@@ -72,12 +73,12 @@ public class MensajesController {
 
     @FXML
     void icono_principal_click(MouseEvent event) {
-        DateMeApp.cambiarPestana("perfilUser/perfilUser.fxml", "Usuario");
+        DateMeApp.cambiarPestana("perfilUsuario/perfilUsuario.fxml", "Usuario",900,600);
     }
 
     @FXML
     void nombre_click(MouseEvent event) {
-        DateMeApp.cambiarPestana("perfilUser/perfilUser.fxml", "Usuario");
+        DateMeApp.cambiarPestana("perfilUsuario/perfilUsuario.fxml", "Usuario",900,600);
     }
 
     @FXML
@@ -114,4 +115,15 @@ public class MensajesController {
         }
     }
 
+    public void ajustesClick(ActionEvent actionEvent) {
+    }
+
+    public void chatsClick(ActionEvent actionEvent) {
+    }
+
+    public void matchesClick(ActionEvent actionEvent) {
+    }
+
+    public void inicioClick(ActionEvent actionEvent) {
+    }
 }

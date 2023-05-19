@@ -26,8 +26,8 @@ public class DateMeApp extends Application {
         Scene login = new Scene(loginloader.load(), 480, 630);
         Scene signup = new Scene(signuploader.load(), 480, 630);
         Scene home = new Scene(homeloader.load(), 900, 600);
-        Scene mensajes = new Scene(mensajesloader.load(), 600, 400);
-        Scene historial = new Scene(historialloader.load(), 600, 400);
+        Scene mensajes = new Scene(mensajesloader.load(), 900, 600);
+        Scene historial = new Scene(historialloader.load(), 900, 600);
         //Scene perfilUsuario = new Scene(perfilUsuarioloader.load(), 900, 600);
         dateMe.setTitle("DateMe");
         dateMe.setScene(mensajes);
@@ -35,10 +35,10 @@ public class DateMeApp extends Application {
         dateMe.show();
     }
 
-    public static void cambiarPestana(String ruta, String nombreVentana) {
+    public static void cambiarPestana(String ruta, String nombreVentana, int width, int height) {
         try {
             FXMLLoader pestañaLoader = new FXMLLoader(DateMeApp.class.getResource(ruta));
-            Scene nuevaEscena = new Scene(pestañaLoader.load(), 900, 600);
+            Scene nuevaEscena = new Scene(pestañaLoader.load(), width, height);
             dateMe.setScene(nuevaEscena);
             dateMe.setTitle(nombreVentana);
         } catch (IOException e) {
