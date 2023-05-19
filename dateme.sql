@@ -106,31 +106,61 @@ INSERT INTO usuarios (id_usuario, nombre, apellidos, contraseña, localidad, cor
     ('alejandrohernandez', 'Alejandro', 'Hernández', 'root', 'Sevilla', 'alejandrohdez@gmail.com', 'Masculino', 'Indiferente', '1988-11-10', '31:40', 'Hola, soy Alejandro, me gusta la cocina y el cine', 'alejandrohernandez.jpg');
 
 INSERT INTO usuarios (id_usuario, nombre, apellidos, contraseña, localidad, correo_electronico, genero, preferencia_genero, fecha_nacimiento, preferencia_edad, descripcion, foto) VALUES
+    ('ermigel', 'Migeliko', 'ElCabesa', 'root', 'Ceuta', 'migelikokeloke@gmail.com', 'Masculino', 'Femenino', '1993-01-05', '18:26', 'La foto es bieja, aora estoy mazau', 'ermigel.jpg');
+
+INSERT INTO usuarios (id_usuario, nombre, apellidos, contraseña, localidad, correo_electronico, genero, preferencia_genero, fecha_nacimiento, preferencia_edad, descripcion, foto) VALUES
+    ('amaiarobles', 'Amaia', 'Robles', 'root', 'Asturias', 'amaiaroblees@gmail.com', 'Femenino', 'Masculino', '1993-03-25', '18:25', 'Me gustan las fiestas y la naturaleza', 'amaiarobles.jpg');
+
+INSERT INTO usuarios (id_usuario, nombre, apellidos, contraseña, localidad, correo_electronico, genero, preferencia_genero, fecha_nacimiento, preferencia_edad, descripcion, foto) VALUES
+    ('anefernandez', 'Ane', 'Fernandez', 'root', 'Navarra', 'afer1999@gmail.com', 'Femenino', 'Masculino', '1999-01-10', '18:25', 'Soy fan del horoscopo, que signo eres?', 'anefernandez.jpg');
+
+INSERT INTO usuarios (id_usuario, nombre, apellidos, contraseña, localidad, correo_electronico, genero, preferencia_genero, fecha_nacimiento, preferencia_edad, descripcion, foto) VALUES
+    ('rauljimenez', 'Raul', 'Jimenez', 'root', 'Granada', 'rauljimenez@gmail.com', 'Masculino', 'Femenino', '2003-11-21', '18:26', 'Chulo y orgulloso', 'rauljimenez.jpg');
+
+INSERT INTO usuarios (id_usuario, nombre, apellidos, contraseña, localidad, correo_electronico, genero, preferencia_genero, fecha_nacimiento, preferencia_edad, descripcion, foto) VALUES
+    ('lavanesaa', 'Vanessa', 'Lopez', 'root', 'Madrid', 'vaneekeloke@gmail.com', 'Femenino', 'Masculino', '1992-05-12', '18:25-26:30', 'Me flipa la juerga', 'lavanesaa.jpg');
+
+INSERT INTO usuarios (id_usuario, nombre, apellidos, contraseña, localidad, correo_electronico, genero, preferencia_genero, fecha_nacimiento, preferencia_edad, descripcion, foto) VALUES
+    ('marcosgarcia', 'Marcos', 'Garcia', 'root', 'Aragon', 'marcosgarcia@gmail.com', 'Masculino', 'Femenino', '1994-12-01', '18:26', 'Hago skate, no ves la gorra o que?', 'marcosgarcia.jpg');
+
+INSERT INTO usuarios (id_usuario, nombre, apellidos, contraseña, localidad, correo_electronico, genero, preferencia_genero, fecha_nacimiento, preferencia_edad, descripcion, foto) VALUES
+    ('maricarmen', 'Maria', 'Del Carmen', 'root', 'Galicia', 'maricarmen@gmail.com', 'Femenino', 'Masculino', '1940-02-24', '51:60-61:70-71:80', 'Hago las mejores croquetas de Galicia', 'maricarmen.jpg');
+
+INSERT INTO usuarios (id_usuario, nombre, apellidos, contraseña, localidad, correo_electronico, genero, preferencia_genero, fecha_nacimiento, preferencia_edad, descripcion, foto) VALUES
     ('sofiamartinez', 'Sofía', 'Martínez', 'root', 'Valencia', 'sofiamartinez@gmail.com', 'Femenino', 'Indiferente', '1936-08-05', '26:30', 'Hola, soy Sofía, me gusta el arte y la naturaleza', 'sofiamartinez.jpg');
 
-INSERT INTO match (id_match, user_id_1, user_id_2) VALUES
-    (1, 'juanperez', 'mariagarcia');
+INSERT INTO usuarios (id_usuario, nombre, apellidos, contraseña, localidad, correo_electronico, genero, preferencia_genero, fecha_nacimiento, preferencia_edad, descripcion, foto) VALUES
+    ('marijose', 'Maria', 'Jose', 'root', 'Madrid', 'marijose@gmail.com', 'Femenino', 'Masculino', '1970-02-01', '31:40', 'Me gusta leer', 'marijose.jpg');
 
-INSERT INTO match (id_match, user_id_1, user_id_2) VALUES
-    (2, 'alejandrohernandez', 'juanperez');
+INSERT INTO usuarios (id_usuario, nombre, apellidos, contraseña, localidad, correo_electronico, genero, preferencia_genero, fecha_nacimiento, preferencia_edad, descripcion, foto) VALUES
+    ('josebatrigo', 'Joseba', 'Trigo', 'root', 'Navarra', 'jtrigosdam1@gmail.com', 'Masculino', 'Femenino', '2004-01-08', '18:26', 'Solo busco sexo', 'josebatrigo.jpg');
 
-INSERT INTO match (id_match, user_id_1, user_id_2) VALUES
-    (3, 'mariagarcia', 'sofiamartinez');
+INSERT INTO usuarios (id_usuario, nombre, apellidos, contraseña, localidad, correo_electronico, genero, preferencia_genero, fecha_nacimiento, preferencia_edad, descripcion, foto) VALUES
+    ('marcofernandez', 'Marco', 'Fernandez', 'root', 'Sevilla', 'marco@gmail.com', 'Masculino', 'Femenino', '1992-06-21', '18:26', 'Me gusta el campo', 'marcofernandez.jpg');
 
-INSERT INTO match (id_match, user_id_1, user_id_2) VALUES
-    (4, 'juanperez', 'sofiamartinez');
+INSERT INTO usuarios (id_usuario, nombre, apellidos, contraseña, localidad, correo_electronico, genero, preferencia_genero, fecha_nacimiento, preferencia_edad, descripcion, foto) VALUES
+    ('mirennavarro', 'Miren', 'Navarro', 'root', 'Asturias', 'mirennav@gmail.com', 'Femenino', 'Masculino', '1993-04-23', '18:25-26:30', 'Romantica pero no mucho', 'mirennavarro.jpg');
+
+INSERT INTO usuarios (id_usuario, nombre, apellidos, contraseña, localidad, correo_electronico, genero, preferencia_genero, fecha_nacimiento, preferencia_edad, descripcion, foto) VALUES
+    ('luisillo', 'Luis', 'Doradp', 'root', 'Navarra', 'luisdoradogarces@gmail.com', 'Masculino', 'Femenino', '1982-03-15', '18:26', 'Puntual y atento', 'luisillo.jpg');
+
+INSERT INTO usuarios (id_usuario, nombre, apellidos, contraseña, localidad, correo_electronico, genero, preferencia_genero, fecha_nacimiento, preferencia_edad, descripcion, foto) VALUES
+    ('naroaliza', 'Naroa', 'Lizarraga', 'root', 'Cantabria', 'naroaliza@gmail.com', 'Femenino', 'Masculino', '2004-02-05', '18:25', 'Despistada y torpe, pero maja', 'naroaliza.jpg');
+
+INSERT INTO usuarios (id_usuario, nombre, apellidos, contraseña, localidad, correo_electronico, genero, preferencia_genero, fecha_nacimiento, preferencia_edad, descripcion, foto) VALUES
+    ('pacaalonso', 'Paca', 'Alonso', 'root', 'Navarra', 'lapaki12@gmail.com', 'Femenino', 'Masculino', '1956-03-12', '51:60', 'Moderna y muy coqueta', 'pacaalonso.jpg');
+
+INSERT INTO usuarios (id_usuario, nombre, apellidos, contraseña, localidad, correo_electronico, genero, preferencia_genero, fecha_nacimiento, preferencia_edad, descripcion, foto) VALUES
+    ('abranico86', 'Abran', 'Jimenez', 'root', 'Navarra', 'abran@gmail.com', 'Masculino', 'Femenino', '1999-01-23', '18:26', 'Este ladron te va a robar el corazon', 'abranico86.jpg');
+
+INSERT INTO usuarios (id_usuario, nombre, apellidos, contraseña, localidad, correo_electronico, genero, preferencia_genero, fecha_nacimiento, preferencia_edad, descripcion, foto) VALUES
+    ('amingarcia', 'Amin', 'Garcia', 'root', 'Madrid', 'amingar@gmail.com', 'Masculino', 'Femenino', '2001-08-22', '18:26', 'Enrrollao ;)', 'amingarcia.jpg');
+
+INSERT INTO usuarios (id_usuario, nombre, apellidos, contraseña, localidad, correo_electronico, genero, preferencia_genero, fecha_nacimiento, preferencia_edad, descripcion, foto) VALUES
+    ('benjamin', 'Benjamin', 'Gonzalez', 'root', 'Madrid', 'benjaamin@gmail.com', 'Masculino', 'Femenino', '1998-03-17', '18:26', 'Me gusta la hipica y el golf', 'benjamin.jpg');
 
 INSERT INTO likes (like_id, user_id_1, user_id_2) VALUES
-    (1, 'juanperez', 'mariagarcia');
-
-INSERT INTO likes (like_id, user_id_1, user_id_2) VALUES
-    (2, 'alejandrohernandez', 'juanperez');
-
-INSERT INTO likes (like_id, user_id_1, user_id_2) VALUES
-    (3, 'mariagarcia', 'juanperez');
-
-INSERT INTO likes (like_id, user_id_1, user_id_2) VALUES
-    (4, 'juanperez', 'sofiamartinez');
+    (1, 'sofiamartinez', 'josebatrigo');
 
 INSERT INTO interacciones (id_interaccion, user_id, perfil_id, tipo_interaccion, fecha_hora_mesaje) VALUES
     (1, 'juanperez', 'mariagarcia', 'like', '2023-04-25 12:30:00');
