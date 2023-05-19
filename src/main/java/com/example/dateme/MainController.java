@@ -6,6 +6,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -23,7 +25,7 @@ public class MainController implements Initializable {
     private Button ajustes;
 
     @FXML
-    private ImageView botonDislike;
+    private Button botonDislike;
 
     @FXML
     private Button botonLike;
@@ -56,6 +58,15 @@ public class MainController implements Initializable {
     private Button matches;
 
     @FXML
+    private Label mensajeMatch;
+
+    @FXML
+    private Button botonMatch;
+
+    @FXML
+    private Pane panelMensajeMatch;
+
+    @FXML
     void ajustesClick(ActionEvent event) {
 
     }
@@ -76,7 +87,13 @@ public class MainController implements Initializable {
         marcarPerfilLikeado();
         marcarPerfilVisitado();
         if (comprobarMatch()) {
-            //TODO mensaje match
+            botonLike.setVisible(false);
+            botonDislike.setVisible(false);
+            panelMensajeMatch.setVisible(true);
+            mensajeMatch.setVisible(true);
+            botonMatch.setVisible(true);
+            String idUsuario = usuarioMostrado.getIdUsuario();
+            mensajeMatch.setText("Has hecho match con " + idUsuario + ", se ha añadido al apartado de Matches.");
         } else {
             siguienteUsuario();
         }
@@ -87,12 +104,24 @@ public class MainController implements Initializable {
 
     }
 
+    @FXML
+    void continuarMatch(ActionEvent event) {
+        mensajeMatch.setVisible(false);
+        botonMatch.setVisible(false);
+        panelMensajeMatch.setVisible(false);
+        botonLike.setVisible(true);
+        botonDislike.setVisible(true);
+        siguienteUsuario();
+    }
+
+    @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         while (usuarios.get(posUsuario).equals(GestorUsuarios.usuarioActual)) {
             posUsuario++;
         }
         usuarioMostrado = usuarios.get(posUsuario);
         mostrarInformacionUsuario(usuarioMostrado);
+        panelMensajeMatch.setVisible(false);
     }
 
     public void marcarPerfilVisitado() {
@@ -126,8 +155,8 @@ public class MainController implements Initializable {
             posUsuario++;
             //TODO Mensaje no se encuentran mas usuarios
         }
-        while (usuarios.get(posUsuario).equals(GestorUsuarios.usuarioActual) ||
-                GestorUsuarios.consultarUsuarioVisitado(usuarios.get(posUsuario))) {
+        while (usuarios.get(posUsuario).equals(GestorUsuarios.usuarioActual)) {
+               // || GestorUsuarios.consultarUsuarioVisitado(usuarios.get(posUsuario))) {
             if (posUsuario <= usuarios.size() - 2) {
                 posUsuario++;
                 //TODO Mensaje no se encuentran mas usuarios

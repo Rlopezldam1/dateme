@@ -66,15 +66,29 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="194.0" layoutY="390.0" mnemonicParsing="false" onAction="#dislikeClick" prefHeight="70.0" prefWidth="70.0" style="-fx-border-color: black; -fx-background-color: da4444;">
+            <Button fx:id="botonDislike" alignment="CENTER" contentDisplay="CENTER" layoutX="194.0" layoutY="390.0" mnemonicParsing="false" onAction="#dislikeClick" prefHeight="70.0" prefWidth="70.0" style="-fx-border-color: black; -fx-background-color: da4444;">
                <graphic>
-                  <ImageView fx:id="botonDislike" fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../imgs/dislike.png" />
                      </image>
                   </ImageView>
                </graphic>
             </Button>
+            <Pane fx:id="panelMensajeMatch" layoutX="26.0" layoutY="352.0" prefHeight="132.0" prefWidth="699.0">
+               <children>
+                  <Label fx:id="mensajeMatch" alignment="CENTER" contentDisplay="CENTER" layoutX="5.0" layoutY="14.0" prefHeight="62.0" prefWidth="690.0" visible="false">
+                     <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="botonMatch" layoutX="271.0" layoutY="72.0" mnemonicParsing="false" onAction="#continuarMatch" prefHeight="33.0" prefWidth="159.0" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-background-color: c1e1ee; -fx-border-color: black;" text="Continuar" visible="false">
+                     <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
          </children>
         </Pane>
     </center>

@@ -18,10 +18,10 @@ DROP TABLE IF EXISTS visitados;
 CREATE TABLE IF NOT EXISTS visitados
 (
     id_visita INTEGER PRIMARY KEY AUTOINCREMENT ,
-    user_id1 TEXT NOT NULL,
-    user_id2 TEXT NOT NULL,
-    FOREIGN KEY (user_id1) REFERENCES  usuarios (id_usuario) ON DELETE CASCADE,
-    FOREIGN KEY (user_id2) REFERENCES  usuarios (id_usuario) ON DELETE CASCADE
+    user_id_1 TEXT NOT NULL,
+    user_id_2 TEXT NOT NULL,
+    FOREIGN KEY (user_id_1) REFERENCES  usuarios (id_usuario) ON DELETE CASCADE,
+    FOREIGN KEY (user_id_2) REFERENCES  usuarios (id_usuario) ON DELETE CASCADE
 );
 DROP TABLE IF EXISTS match;
 CREATE TABLE IF NOT EXISTS match
@@ -36,10 +36,10 @@ DROP TABLE IF EXISTS likes;
 CREATE TABLE IF NOT EXISTS likes
 (
     like_id         INTEGER PRIMARY KEY AUTOINCREMENT ,
-    user_id         TEXT  NOT NULL,
-    perfil_id       TEXT  NOT NULL,
-    FOREIGN KEY (user_id) REFERENCES usuarios (id_usuario) ON DELETE CASCADE,
-    FOREIGN KEY (perfil_id) REFERENCES usuarios (id_usuario) ON DELETE CASCADE
+    user_id_1         TEXT  NOT NULL,
+    user_id_2       TEXT  NOT NULL,
+    FOREIGN KEY (user_id_1) REFERENCES usuarios (id_usuario) ON DELETE CASCADE,
+    FOREIGN KEY (user_id_2) REFERENCES usuarios (id_usuario) ON DELETE CASCADE
 );
 DROP TABLE IF EXISTS interacciones;
 CREATE TABLE IF NOT EXISTS interacciones
@@ -88,12 +88,12 @@ CREATE TABLE IF NOT EXISTS reportes
 DROP TABLE IF EXISTS bloqueos;
 CREATE TABLE IF NOT EXISTS bloqueos
 (
-                          id_bloqueo INTEGER PRIMARY KEY AUTOINCREMENT ,
-                          user_id TEXT NOT NULL,
-                          perfil_id TEXT NOT NULL,
-                          fecha_hora_bloqueo DATETIME NOT NULL,
-                          FOREIGN KEY (user_id) REFERENCES usuarios(id_usuario) ON DELETE CASCADE,
-                          FOREIGN KEY (perfil_id) REFERENCES usuarios(id_usuario) ON DELETE CASCADE
+    id_bloqueo INTEGER PRIMARY KEY AUTOINCREMENT ,
+    user_id TEXT NOT NULL,
+    perfil_id TEXT NOT NULL,
+    fecha_hora_bloqueo DATETIME NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES usuarios(id_usuario) ON DELETE CASCADE,
+    FOREIGN KEY (perfil_id) REFERENCES usuarios(id_usuario) ON DELETE CASCADE
 );
 
 INSERT INTO usuarios (id_usuario, nombre, apellidos, contraseña, localidad, correo_electronico, genero, preferencia_genero, fecha_nacimiento, preferencia_edad, descripcion, foto) VALUES
@@ -119,19 +119,19 @@ INSERT INTO match (id_match, user_id_1, user_id_2) VALUES
 
 INSERT INTO match (id_match, user_id_1, user_id_2) VALUES
     (4, 'juanperez', 'sofiamartinez');
-
-INSERT INTO likes (like_id, user_id, perfil_id) VALUES
+/*
+INSERT INTO likes (like_id, user_id_1, user_id_2) VALUES
     (1, 'juanperez', 'mariagarcia');
 
-INSERT INTO likes (like_id, user_id, perfil_id) VALUES
+INSERT INTO likes (like_id, user_id_1, user_id_2) VALUES
     (2, 'alejandrohernandez', 'juanperez');
 
-INSERT INTO likes (like_id, user_id, perfil_id) VALUES
+INSERT INTO likes (like_id, user_id_1, user_id_2) VALUES
     (3, 'mariagarcia', 'juanperez');
 
-INSERT INTO likes (like_id, user_id, perfil_id) VALUES
+INSERT INTO likes (like_id, user_id_1, user_id_2) VALUES
     (4, 'juanperez', 'sofiamartinez');
-
+*/
 INSERT INTO interacciones (id_interaccion, user_id, perfil_id, tipo_interaccion, fecha_hora_mesaje) VALUES
     (1, 'juanperez', 'mariagarcia', 'like', '2023-04-25 12:30:00');
 

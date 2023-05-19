@@ -67,12 +67,56 @@ public class GestionDatosBBDD {
         Statement statement = null;
         String idUsuario = usuario.getIdUsuario();
         try {
-            String sql = "SELECT * FROM visitados WHERE user_id1 = '" + idUsuario + "'";
+            String sql = "SELECT * FROM visitados WHERE user_id_1 = '" + idUsuario + "'";
             statement = connection.createStatement();
             ResultSet resultados = statement.executeQuery(sql);
 
             while (resultados.next()) {
-                String idUsuarioVisitado = resultados.getString("user_id2");
+                String idUsuarioVisitado = resultados.getString("user_id_2");
+                usuariosVisitados.add(idUsuarioVisitado);
+            }
+            statement.close();
+            connection.close();
+        } catch (SQLException exception) {
+            exception.printStackTrace();
+        }
+        return usuariosVisitados;
+    }
+
+    public static ArrayList<String> extraerUsuariosLikeados(Usuario usuario) {
+        ArrayList<String> usuariosVisitados = new ArrayList<>();
+        Connection connection = SQLiteConnection.conectar();
+        Statement statement = null;
+        String idUsuario = usuario.getIdUsuario();
+        try {
+            String sql = "SELECT * FROM visitados WHERE user_id_1 = '" + idUsuario + "'";
+            statement = connection.createStatement();
+            ResultSet resultados = statement.executeQuery(sql);
+
+            while (resultados.next()) {
+                String idUsuarioVisitado = resultados.getString("user_id_2");
+                usuariosVisitados.add(idUsuarioVisitado);
+            }
+            statement.close();
+            connection.close();
+        } catch (SQLException exception) {
+            exception.printStackTrace();
+        }
+        return usuariosVisitados;
+    }
+
+    public static ArrayList<String> extraerMatches(Usuario usuario) {
+        ArrayList<String> usuariosVisitados = new ArrayList<>();
+        Connection connection = SQLiteConnection.conectar();
+        Statement statement = null;
+        String idUsuario = usuario.getIdUsuario();
+        try {
+            String sql = "SELECT * FROM match WHERE user_id_1 = '" + idUsuario + "'";
+            statement = connection.createStatement();
+            ResultSet resultados = statement.executeQuery(sql);
+
+            while (resultados.next()) {
+                String idUsuarioVisitado = resultados.getString("user_id_2");
                 usuariosVisitados.add(idUsuarioVisitado);
             }
             statement.close();
@@ -165,7 +209,7 @@ public class GestionDatosBBDD {
         Connection connection = SQLiteConnection.conectar();
         PreparedStatement statement = null;
         try {
-            String sql = "INSERT INTO visitados (user_id1, user_id2) VALUES (?, ?)";
+            String sql = "INSERT INTO visitados (user_id_1, user_id_2) VALUES (?, ?)";
             statement = connection.prepareStatement(sql);
             statement.setString(1, idUsuario);
             statement.setString(2, idUsuarioVisitado);
@@ -184,7 +228,7 @@ public class GestionDatosBBDD {
         Statement statement = null;
 
         try {
-            String sql = "SELECT * FROM visitados WHERE user_id1 = '" + idUsuario + "' and user_id2 = '" + idUsuarioVisitado + "'";
+            String sql = "SELECT * FROM visitados WHERE user_id_1 = '" + idUsuario + "' and user_id_2 = '" + idUsuarioVisitado + "'";
             statement = connection.createStatement();
             ResultSet resultado = statement.executeQuery(sql);
             if (resultado.next()) {
@@ -206,7 +250,7 @@ public class GestionDatosBBDD {
         Statement statement = null;
 
         try {
-            String sql = "SELECT * FROM likes WHERE user_id1 = '" + idUsuarioLikeado + "' and user_id2 = '" + idUsuario + "'";
+            String sql = "SELECT * FROM likes WHERE user_id_1 = '" + idUsuarioLikeado + "' and user_id_2 = '" + idUsuario + "'";
             statement = connection.createStatement();
             ResultSet resultado = statement.executeQuery(sql);
             if (resultado.next()) {
@@ -227,7 +271,7 @@ public class GestionDatosBBDD {
         Connection connection = SQLiteConnection.conectar();
         PreparedStatement statement = null;
         try {
-            String sql = "INSERT INTO likes (user_id1, user_id2) VALUES (?, ?)";
+            String sql = "INSERT INTO likes (user_id_1, user_id_2) VALUES (?, ?)";
             statement = connection.prepareStatement(sql);
             statement.setString(1, idUsuario);
             statement.setString(2, idUsuarioVisitado);
@@ -245,7 +289,7 @@ public class GestionDatosBBDD {
         PreparedStatement statement1 = null;
         PreparedStatement statement2 = null;
         try {
-            String sql = "INSERT INTO likes (user_id1, user_id2) VALUES (?, ?)";
+            String sql = "INSERT INTO likes (user_id_1, user_id_2) VALUES (?, ?)";
 
             statement1 = connection.prepareStatement(sql);
             statement1.setString(1, idUsuario);

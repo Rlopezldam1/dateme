@@ -13,6 +13,8 @@ public class GestorUsuarios {
     public static void inicializarUsuarioActual(String id) {
         usuarioActual = GestorUsuarios.existeUsuario(id);
         usuariosVisitados = GestionDatosBBDD.extraerUsuariosVisitados(usuarioActual);
+        usuariosLikeados = GestionDatosBBDD.extraerUsuariosLikeados(usuarioActual);
+        matches = GestionDatosBBDD.extraerMatches(usuarioActual);
     }
 
     public static void addUsuarioVisitado(Usuario usuarioVisitado) {
