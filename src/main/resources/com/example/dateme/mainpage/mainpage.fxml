@@ -10,9 +10,9 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dateme.MainController">
     <center>
-        <Pane prefHeight="532.0" prefWidth="910.0" style="-fx-background-color: white; -fx-border-color: #6fa0b5;" BorderPane.alignment="CENTER">
+        <Pane fx:id="panelCentral" prefHeight="532.0" prefWidth="910.0" style="-fx-background-color: white; -fx-border-color: #6fa0b5;" BorderPane.alignment="CENTER">
          <children>
-            <Pane layoutX="416.0" layoutY="77.0" prefHeight="250.0" prefWidth="250.0" style="-fx-border-color: black;">
+            <Pane fx:id="panelImagen" layoutX="416.0" layoutY="77.0" prefHeight="250.0" prefWidth="250.0" style="-fx-border-color: black;">
                <children>
                   <ImageView fx:id="campoImagen" fitHeight="250.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true" />
                </children>
@@ -37,7 +37,7 @@
                   <Font name="System Italic" size="15.0" />
                </font>
             </Label>
-            <ImageView fitHeight="21.0" fitWidth="23.0" layoutX="42.0" layoutY="146.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imagenLocalidad" fitHeight="21.0" fitWidth="23.0" layoutX="42.0" layoutY="146.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../imgs/ubicacion.png" />
                </image>
@@ -47,12 +47,12 @@
                   <Font name="System Italic" size="15.0" />
                </font>
             </Label>
-            <Label layoutX="42.0" layoutY="205.0" prefHeight="32.0" prefWidth="169.0" text="Descripción:">
+            <Label fx:id="labelDescripcion" layoutX="42.0" layoutY="205.0" prefHeight="32.0" prefWidth="169.0" text="Descripción:">
                <font>
                   <Font name="System Italic" size="15.0" />
                </font>
             </Label>
-            <Label fx:id="campoDescripcion" layoutX="42.0" layoutY="234.0" prefHeight="114.0" prefWidth="359.0" text="...">
+            <Label fx:id="campoDescripcion" layoutX="40.0" layoutY="237.0" prefHeight="114.0" prefWidth="359.0" text="...">
                <font>
                   <Font name="System Italic" size="15.0" />
                </font>
@@ -89,6 +89,20 @@
                   </Button>
                </children>
             </Pane>
+            <Pane fx:id="panelUsuariosNoEncontrados" layoutX="26.0" layoutY="155.0" prefHeight="132.0" prefWidth="699.0">
+               <children>
+                  <Label fx:id="mensajeUsuariosNoEncontrados" alignment="CENTER" contentDisplay="CENTER" layoutX="5.0" layoutY="24.0" prefHeight="52.0" prefWidth="690.0" text="No hay mas usuarios disponibles en este instante">
+                     <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="mensajeUsuariosNoEncontrados1" alignment="CENTER" contentDisplay="CENTER" layoutX="5.0" layoutY="57.0" prefHeight="52.0" prefWidth="690.0" text="Intentelo mas tarde">
+                     <font>
+                        <Font name="System Italic" size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
          </children>
         </Pane>
     </center>
@@ -114,7 +128,7 @@
         </Pane>
     </top>
    <left>
-      <Pane prefHeight="489.0" prefWidth="150.0" style="-fx-background-color: c1e1ee;" BorderPane.alignment="CENTER">
+      <Pane prefHeight="495.0" prefWidth="150.0" style="-fx-background-color: c1e1ee;" BorderPane.alignment="CENTER">
          <children>
             <Button fx:id="ajustes" layoutX="14.0" layoutY="141.0" mnemonicParsing="false" onAction="#ajustesClick" onMouseClicked="#ajustesClick" prefHeight="45.0" prefWidth="123.0" style="-fx-background-color: null;">
                <graphic>

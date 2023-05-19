@@ -67,6 +67,21 @@ public class MainController implements Initializable {
     private Pane panelMensajeMatch;
 
     @FXML
+    private Label labelDescripcion;
+
+    @FXML
+    private ImageView imagenLocalidad;
+
+    @FXML
+    private Pane panelImagen;
+
+    @FXML
+    private Label mensajeUsuariosNoEncontrados;
+
+    @FXML
+    private Pane panelUsuariosNoEncontrados;
+
+    @FXML
     void ajustesClick(ActionEvent event) {
 
     }
@@ -122,6 +137,8 @@ public class MainController implements Initializable {
         usuarioMostrado = usuarios.get(posUsuario);
         mostrarInformacionUsuario(usuarioMostrado);
         panelMensajeMatch.setVisible(false);
+        panelUsuariosNoEncontrados.setVisible(false);
+        campoImagen.setPreserveRatio(false);
     }
 
     public void marcarPerfilVisitado() {
@@ -150,16 +167,37 @@ public class MainController implements Initializable {
         campoImagen.setImage(usuario.getImagenUsuario());
     }
 
+    public void usuariosNoEncontrados() {
+        campoNombre.setVisible(false);
+        campoApellidos.setVisible(false);
+        campoId.setVisible(false);
+        campoLocalidad.setVisible(false);
+        campoEdad.setVisible(false);
+        campoDescripcion.setVisible(false);
+        labelDescripcion.setVisible(false);
+        imagenLocalidad.setVisible(false);
+        panelImagen.setVisible(false);
+        campoImagen.setVisible(false);
+        botonLike.setVisible(false);
+        botonDislike.setVisible(false);
+        panelUsuariosNoEncontrados.setVisible(true);
+
+    }
+
     public void siguienteUsuario() {
         if (posUsuario <= usuarios.size() - 2) {
             posUsuario++;
-            //TODO Mensaje no se encuentran mas usuarios
+        } else {
+            usuariosNoEncontrados();
         }
-        while (usuarios.get(posUsuario).equals(GestorUsuarios.usuarioActual)) {
+        while (usuarios.get(posUsuario).equals(GestorUsuarios.usuarioActual)) { //TODO descomentar
                // || GestorUsuarios.consultarUsuarioVisitado(usuarios.get(posUsuario))) {
             if (posUsuario <= usuarios.size() - 2) {
                 posUsuario++;
-                //TODO Mensaje no se encuentran mas usuarios
+            }
+            else {
+                usuariosNoEncontrados();
+                break;
             }
         }
         usuarioMostrado = usuarios.get(posUsuario);
