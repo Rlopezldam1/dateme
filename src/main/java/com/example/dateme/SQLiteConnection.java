@@ -188,6 +188,20 @@ public class SQLiteConnection {
             }
         }
     }
+        public static ResultSet ejecutarConsulta(String query) {
+            String url = "jdbc:sqlite:dateme.db";
+
+            try (Connection connection = DriverManager.getConnection(url);
+                 Statement stmt = connection.createStatement();
+                 ResultSet rs = stmt.executeQuery(query)) {
+
+                return rs;
+            } catch (SQLException e) {
+                System.out.println(e.getMessage());
+            }
+            return null;
+        }
+
 
     // Ejemplo de uso
     public static void main(String[] args) {

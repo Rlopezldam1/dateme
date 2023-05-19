@@ -30,7 +30,7 @@ public class DateMeApp extends Application {
         Scene historial = new Scene(historialloader.load(), 600, 400);
         //Scene perfilUsuario = new Scene(perfilUsuarioloader.load(), 900, 600);
         dateMe.setTitle("DateMe");
-        dateMe.setScene(login);
+        dateMe.setScene(mensajes);
         dateMe.setResizable(false);
         dateMe.show();
     }
