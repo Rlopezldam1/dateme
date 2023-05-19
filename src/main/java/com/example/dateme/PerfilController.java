@@ -3,7 +3,6 @@ package com.example.dateme;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -386,7 +385,6 @@ public class PerfilController implements Initializable {
     * Metodo para inicializar los grupos de botones al
     * cargar el fichero fxml
     */
-    @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         botonHombre.setToggleGroup(grupoGenero);
         botonMujer.setToggleGroup(grupoGenero);

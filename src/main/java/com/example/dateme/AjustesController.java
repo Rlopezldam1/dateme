@@ -1,30 +1,58 @@
 package com.example.dateme;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 
 public class AjustesController {
-    public void editarPerfilClick(ActionEvent actionEvent) {
+
+    @FXML
+    private Button ajustes;
+
+    @FXML
+    private Button botonCrear;
+
+    @FXML
+    private Button botonCrear1;
+
+    @FXML
+    private Button botonCrear11;
+
+    @FXML
+    private Button botonCrear12;
+
+    @FXML
+    private Button chats;
+
+    @FXML
+    private Button inicio;
+
+    @FXML
+    private Button matches;
+
+    @FXML
+    void accionCrear(ActionEvent event) {
+
     }
 
-    public void cambiarPreferenciasClick(ActionEvent actionEvent) {
-    }
-
-    public void configuracionPrivacidadClick(ActionEvent actionEvent) {
-    }
-
-    public void cerrarSesionClick(ActionEvent actionEvent) {
+    @FXML
+    void ajustesClick(ActionEvent event) {
 
     }
 
-    public void ajustesClick(ActionEvent actionEvent) {
+    @FXML
+    void chatsClick(ActionEvent event) {
+
     }
 
-    public void chatsClick(ActionEvent actionEvent) {
+    @FXML
+    void inicioClick(ActionEvent event) {
+
     }
 
-    public void matchesClick(ActionEvent actionEvent) {
+    @FXML
+    void matchesClick(ActionEvent event) {
+
     }
 
-    public void inicioClick(ActionEvent actionEvent) {
-    }
 }

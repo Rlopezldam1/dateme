@@ -6,8 +6,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.Pane;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -89,7 +87,6 @@ public class MainController implements Initializable {
 
     }
 
-    @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         while (usuarios.get(posUsuario).equals(GestorUsuarios.usuarioActual)) {
             posUsuario++;

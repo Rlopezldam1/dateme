@@ -11,7 +11,6 @@ import java.net.URL;
 
 public class DateMeApp extends Application {
     public static Stage dateMe;
-    @Override
     public void start(Stage stage) throws IOException {
         dateMe = stage;
         URL url = getClass().getResource("imgs/cupido.png");
