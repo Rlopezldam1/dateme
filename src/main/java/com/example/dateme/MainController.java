@@ -83,12 +83,12 @@ public class MainController implements Initializable {
 
     @FXML
     void ajustesClick(ActionEvent event) {
-
+        DateMeApp.cambiarPestana("settings/settings.fxml","Ajustes",900,600);
     }
 
     @FXML
     void chatsClick(ActionEvent event) {
-
+        DateMeApp.cambiarPestana("chats/chats.fxml","Chats",900,600);
     }
 
     @FXML
@@ -116,7 +116,7 @@ public class MainController implements Initializable {
 
     @FXML
     void matchesClick(ActionEvent event) {
-
+        DateMeApp.cambiarPestana("match/match.fxml","Matches",900,600);
     }
 
     @FXML
@@ -202,5 +202,9 @@ public class MainController implements Initializable {
         }
         usuarioMostrado = usuarios.get(posUsuario);
         mostrarInformacionUsuario(usuarioMostrado);
+    }
+
+    public void inicioClick(ActionEvent actionEvent) {
+        DateMeApp.cambiarPestana("mainpage/mainpage.fxml","DateMe",900,600);
     }
 }

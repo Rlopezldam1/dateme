@@ -38,21 +38,26 @@ public class AjustesController {
 
     @FXML
     void ajustesClick(ActionEvent event) {
-
+        DateMeApp.cambiarPestana("settings/settings.fxml","Ajustes",900,600);
     }
 
     @FXML
     void chatsClick(ActionEvent event) {
-
+        DateMeApp.cambiarPestana("chats/chats.fxml","Chats",900,600);
     }
 
     @FXML
     void inicioClick(ActionEvent event) {
-
+        DateMeApp.cambiarPestana("mainpage/mainpage.fxml","DateMe",900,600);
     }
 
     @FXML
     void matchesClick(ActionEvent event) {
+        DateMeApp.cambiarPestana("match/match.fxml","Matches",900,600);
+    }
 
+    @FXML
+    void click_log_out(ActionEvent event) {
+        DateMeApp.cambiarPestana("login/login.fxml","DateMe",480,630);
     }
 }

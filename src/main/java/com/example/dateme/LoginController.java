@@ -8,6 +8,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -41,6 +43,7 @@ public class LoginController {
 
     @FXML
     void actionIngresar(ActionEvent event) {
+        System.out.println(event.toString());
         if (GestorUsuarios.existeUsuario(campoIdUsuario.getText()) != null && validarCredenciales()) {
             GestorUsuarios.inicializarUsuarioActual(campoIdUsuario.getText());
             cambiarEscena(event, MAINPAGE, 900, 600);
@@ -70,4 +73,13 @@ public class LoginController {
             exception.printStackTrace();
         }
     }
+
+    @FXML
+    void teclaPulsada(KeyEvent event) {
+        KeyCode caracter = event.getCode();
+        if (caracter == KeyCode.ENTER){
+            actionIngresar(new ActionEvent(botonIngresar, null));
+        }
+    }
+
 }

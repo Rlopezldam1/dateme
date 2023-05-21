@@ -24,27 +24,22 @@ public class chatsController {
 
     @FXML
     void ajustesClick(MouseEvent event) {
-
-    }
-
-    @FXML
-    void chat1Click(MouseEvent event) {
-
+        DateMeApp.cambiarPestana("settings/settings.fxml","Ajustes",900,600);
     }
 
     @FXML
     void chatsClick(MouseEvent event) {
-
+        DateMeApp.cambiarPestana("chats/chats.fxml","Chats",900,600);
     }
 
     @FXML
     void inicioClick(MouseEvent event) {
-
+        DateMeApp.cambiarPestana("mainpage/mainpage.fxml","DateMe",900,600);
     }
 
     @FXML
     void matchesClick(MouseEvent event) {
-
+        DateMeApp.cambiarPestana("match/match.fxml","Matches",900,600);
     }
 
 }

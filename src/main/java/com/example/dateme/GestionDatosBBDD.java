@@ -307,7 +307,7 @@ public class GestionDatosBBDD {
         PreparedStatement statement1 = null;
         PreparedStatement statement2 = null;
         try {
-            String sql = "INSERT INTO likes (user_id_1, user_id_2) VALUES (?, ?)";
+            String sql = "INSERT INTO match (user_id_1, user_id_2) VALUES (?, ?)";
 
             statement1 = connection.prepareStatement(sql);
             statement1.setString(1, idUsuario);
