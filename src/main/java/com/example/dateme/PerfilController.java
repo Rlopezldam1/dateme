@@ -52,6 +52,8 @@ public class PerfilController implements Initializable {
     @FXML
     private RadioButton botonOtros;
     @FXML
+    private Button botonSelectImagen;
+    @FXML
     private TextField campoApellidos;
     @FXML
     private TextField campoCorreo;
@@ -290,9 +292,6 @@ public class PerfilController implements Initializable {
             errorImagen.setText("*");
             valido = false;
         }
-        if (!valido) {
-            LogGenerator.escribirLog("Algun campo de la creacion de perfil no es valido", LogLevel.ERROR);
-        }
         return valido;
     }
 
@@ -353,7 +352,10 @@ public class PerfilController implements Initializable {
     */
     public boolean validarFecha() {
         LocalDate fechaNacimiento = campoFecha.getValue();
-        if (fechaNacimiento == null || !esMayorDeEdad(fechaNacimiento)) {
+        if (fechaNacimiento == null) {
+            return false;
+        }
+        if (!esMayorDeEdad(fechaNacimiento)) {
             return false;
         }
         errorFecha.setText("");
@@ -384,9 +386,6 @@ public class PerfilController implements Initializable {
         return false;
     }
 
-    /*
-    * Valida que se haya seleccionado una localidad
-     */
     public boolean validarLocalidad() {
         if (!campoLocalidad.getText().equals("Localidad")) {
             errorLocalidad.setText("");
@@ -429,9 +428,6 @@ public class PerfilController implements Initializable {
         campoImagen.setPreserveRatio(false);
     }
 
-    /*
-    * Cambia de escena cargando otro fxnl
-    */
     public void cambiarEscena(ActionEvent event, String fxml, int width, int height) {
         Button botonEvento = (Button) event.getSource();
         Stage stage = (Stage) botonEvento.getScene().getWindow();
@@ -440,7 +436,16 @@ public class PerfilController implements Initializable {
             Scene escena = new Scene(loader.load(), width, height);
             stage.setScene(escena);
         } catch(IOException exception) {
-            LogGenerator.escribirLog(exception.getMessage(), LogLevel.ERROR);
+            exception.printStackTrace();
         }
+    }
+
+    public static void main(String[] args) {
+        URL url = PerfilController.class.getResource("fotosperfil/");
+        String b = url.getPath() + "josebatrigo" + ".jpg";
+        String c = url.toString() + "josebatrigo" + ".jpg";
+
+        System.out.println(b);
+        System.out.println(c);
     }
 }

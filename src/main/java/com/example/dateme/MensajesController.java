@@ -204,7 +204,7 @@ public class MensajesController {
             if (campos.length == 2) {
                 String mensaje = campos[0];
                 String userEnviador = campos[1];
-                if (userEnviador != nombreUser){
+                if (userEnviador.equals(nombreUser)){
                     ponerTextoRecibido(mensaje,foto);
                 }else {
                     ponerTextoEnviado(mensaje);
