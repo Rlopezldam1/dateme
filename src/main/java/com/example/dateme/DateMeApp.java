@@ -28,13 +28,13 @@ public class DateMeApp extends Application {
         FXMLLoader mensajesloader = new FXMLLoader(this.getClass().getResource("mensajes/mensajes.fxml"));
         FXMLLoader matchloader = new FXMLLoader(this.getClass().getResource("match/match.fxml"));
         FXMLLoader mainloader = new FXMLLoader(this.getClass().getResource("mainpage/mainpage.fxml"));
-        //FXMLLoader perfilUsuarioloader = new FXMLLoader(this.getClass().getResource("perfilUsuario/perfilUsuario.fxml"));
+        FXMLLoader perfilUsuarioloader = new FXMLLoader(this.getClass().getResource("perfilUsuario/perfilUsuario.fxml"));
         Scene login = new Scene(loginloader.load(), 480, 630);
         Scene signup = new Scene(signuploader.load(), 480, 630);
         Scene home = new Scene(homeloader.load(), 900, 600);
         Scene mensajes = new Scene(mensajesloader.load(), 900, 600);
         Scene match = new Scene(matchloader.load(), 900, 600);
-        //Scene perfilUsuario = new Scene(perfilUsuarioloader.load(), 900, 600);
+        Scene perfilUsuario = new Scene(perfilUsuarioloader.load(), 900, 600);
         dateMe.setTitle("DateMe");
         dateMe.setScene(home);
         dateMe.setResizable(false);

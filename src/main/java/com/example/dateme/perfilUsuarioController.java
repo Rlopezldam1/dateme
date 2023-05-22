@@ -47,6 +47,9 @@ public class perfilUsuarioController {
     private Button chats;
 
     @FXML
+    private Button EnviarMensaje;
+
+    @FXML
     private Button inicio;
 
     @FXML
@@ -110,6 +113,11 @@ public class perfilUsuarioController {
 
     public void inicioClick(ActionEvent actionEvent) {
         DateMeApp.cambiarPestana("mainpage/mainpage.fxml", "DateMe",900,600);
+    }
+
+    @FXML
+    void clickId(MouseEvent event) throws IOException {
+        DateMeApp.cambiarChat(campoId.getText(),campoImagen.getImage());
     }
 
     @FXML

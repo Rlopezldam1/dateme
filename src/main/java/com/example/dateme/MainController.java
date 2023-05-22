@@ -9,6 +9,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -127,6 +128,11 @@ public class MainController implements Initializable {
         botonLike.setVisible(true);
         botonDislike.setVisible(true);
         siguienteUsuario();
+    }
+
+    @FXML
+    void clickId(MouseEvent event) throws IOException {
+        DateMeApp.cambiarChat(campoId.getText(),campoImagen.getImage());
     }
 
     @Override
