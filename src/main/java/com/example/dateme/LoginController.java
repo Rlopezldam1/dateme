@@ -8,11 +8,13 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
 
 public class LoginController {
@@ -47,6 +49,18 @@ public class LoginController {
         if (GestorUsuarios.existeUsuario(campoIdUsuario.getText()) != null && validarCredenciales()) {
             GestorUsuarios.inicializarUsuarioActual(campoIdUsuario.getText());
             cambiarEscena(event, MAINPAGE, 900, 600);
+            DateMeApp.nombreUsuarioIniciado = campoIdUsuario.getText();
+            String rutaFoto = SQLiteConnection.ejecutarConsulta("SELECT foto FROM usuarios where id_usuario = '" + campoIdUsuario.getText() + "'");
+            String rutaFotoFinal = rutaFoto.substring(0, rutaFoto.length() - 1);
+            String ruta = "fotosperfil/" + rutaFotoFinal;
+            URL urlFoto = getClass().getResource(ruta);
+            Image img = null;
+            try {
+                img = new Image(urlFoto.openStream());
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            DateMeApp.fotoUsuario = img;
         } else {
             campoIdUsuario.setText("");
             campoContraseña.setText("");

@@ -8,7 +8,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
 import javafx.stage.FileChooser;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 
 import java.io.File;
@@ -153,6 +155,14 @@ public class PerfilController implements Initializable {
         }
         else {
             System.out.println("El perfil no cumple los requisitos");
+        }
+    }
+
+    @FXML
+    void teclaPulsada(KeyEvent event) {
+        KeyCode caracter = event.getCode();
+        if (caracter == KeyCode.ENTER){
+            actionBotonContinuar(new ActionEvent(botonContinuar, null));
         }
     }
 

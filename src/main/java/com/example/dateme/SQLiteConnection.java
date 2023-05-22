@@ -188,19 +188,34 @@ public class SQLiteConnection {
             }
         }
     }
-        public static ResultSet ejecutarConsulta(String query) {
-            String url = "jdbc:sqlite:dateme.db";
+    public static String ejecutarConsulta(String consulta) {
+        String url = "jdbc:sqlite:dateme.db";
+        String resultado = "";
 
-            try (Connection connection = DriverManager.getConnection(url);
-                 Statement stmt = connection.createStatement();
-                 ResultSet rs = stmt.executeQuery(query)) {
+        try (Connection conn = DriverManager.getConnection(url);
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(consulta)) {
 
-                return rs;
-            } catch (SQLException e) {
-                System.out.println(e.getMessage());
+            ResultSetMetaData metaData = rs.getMetaData();
+            int columnCount = metaData.getColumnCount();
+
+            // Recorrer las filas del resultado
+            while (rs.next()) {
+                // Recorrer las columnas del resultado
+                for (int i = 1; i <= columnCount; i++) {
+                    resultado += rs.getString(i);
+                    if (i < columnCount) {
+                        resultado += ";";
+                    }
+                }
+                resultado += "\n"; // Salto de línea entre filas
             }
-            return null;
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
+
+        return resultado;
+    }
 
 
     // Ejemplo de uso

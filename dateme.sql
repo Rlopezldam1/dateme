@@ -175,7 +175,7 @@ INSERT INTO interacciones (id_interaccion, user_id, perfil_id, tipo_interaccion,
     (4, 'juanperez', 4, 'mensaje', '2023-04-28 14:15:00');
 
 INSERT INTO mensajes (id_mensaje, user_id, perfil_id, mensaje, estado_mensaje, fecha_hora_mesaje) VALUES
-    (1, 1, 'mariagarcia', 'Hola, ¿cómo estás?', 'no leido', '2023-05-01 10:00:00');
+    (1, 'alejandrohernandez', 'mariagarcia', 'Hola, ¿cómo estás?', 'no leido', '2023-05-01 10:00:00');
 
 INSERT INTO mensajes (id_mensaje, user_id, perfil_id, mensaje, estado_mensaje, fecha_hora_mesaje) VALUES
     (2, 'alejandrohernandez', 'juanperez', 'Hola, ¿qué tal?', 'leido', '2023-05-01 11:00:00');
@@ -221,3 +221,15 @@ INSERT INTO bloqueos (id_bloqueo, user_id, perfil_id, fecha_hora_bloqueo) VALUES
 
 INSERT INTO bloqueos (id_bloqueo, user_id, perfil_id, fecha_hora_bloqueo) VALUES
     (4, 'juanperez', 'sofiamartinez', '2023-04-28 11:55:00');
+
+INSERT INTO match (user_id_1, user_id_2)
+VALUES ('sofiamartinez', 'alejandrohernandez');
+
+INSERT INTO match (user_id_1, user_id_2)
+VALUES ('juanperez', 'sofiamartinez');
+
+INSERT INTO match (user_id_1, user_id_2)
+VALUES ('alejandrohernandez', 'mariagarcia');
+
+INSERT INTO match (user_id_1, user_id_2)
+VALUES ('sofiamartinez', 'mariagarcia');

@@ -8,6 +8,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 import javafx.stage.Window;
 
@@ -52,6 +54,16 @@ public class SignUpController {
             idUsuario = campoIdUsuario.getText();
             contraseñaUsuario = campoContraseña.getText();
             cambiarEscena(event, PERFIL, 900, 600);
+        }
+    }
+
+
+
+    @FXML
+    void teclaPulsada(KeyEvent event) {
+        KeyCode caracter = event.getCode();
+        if (caracter == KeyCode.ENTER){
+            accionCrear(new ActionEvent(botonCrear, null));
         }
     }
 

@@ -31,12 +31,12 @@
                         <Font name="Serif Bold Italic" size="54.0" />
                     </font>
                 </Label>
-            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="348.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="iconoPrincipal" fitHeight="50.0" fitWidth="50.0" layoutX="348.0" layoutY="26.0" onMouseClicked="#icono_principal_click" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../imgs/user.png" />
                </image>
             </ImageView>
-            <Label layoutX="427.0" layoutY="36.0" text="Isabel">
+            <Label fx:id="nombre" layoutX="427.0" layoutY="36.0" onMouseClicked="#nombre_click" text="Isabel">
                <font>
                   <Font size="20.0" />
                </font>
