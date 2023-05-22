@@ -1,5 +1,6 @@
 package com.example.dateme;
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.sql.*;
@@ -221,18 +222,12 @@ public class SQLiteConnection {
     // Ejemplo de uso
     public static void main(String[] args) {
         Connection connection = conectar();
-        // Utiliza la conexión para realizar operaciones con la base de datos
-        // ...
-        // Recuerda cerrar la conexión al finalizar
-        //try {
-         //   if (connection != null) {
-          //      connection.close();
-          //      System.out.println("Conexión cerrada correctamente.");
-          //  }
-       // } catch (SQLException e) {
-        //  System.out.println("Error al cerrar la conexión: " + e.getMessage());
-       // }
-        ejecutarScriptSQL("dateme.sql");
+        String fileName = "dateme.db";
+        File file = new File(fileName);
+
+        if (!file.exists()) {
+            ejecutarScriptSQL("dateme.sql");
+        }
     }
 }
 

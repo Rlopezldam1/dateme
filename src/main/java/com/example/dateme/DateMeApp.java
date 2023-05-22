@@ -32,7 +32,7 @@ public class DateMeApp extends Application {
         Scene match = new Scene(matchloader.load(), 900, 600);
         //Scene perfilUsuario = new Scene(perfilUsuarioloader.load(), 900, 600);
         dateMe.setTitle("DateMe");
-        dateMe.setScene(signup);
+        dateMe.setScene(home);
         dateMe.setResizable(false);
         dateMe.show();
         SQLiteConnection.main(null);
