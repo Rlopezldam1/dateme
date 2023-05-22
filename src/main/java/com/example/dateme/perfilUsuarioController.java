@@ -11,6 +11,8 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+
+import java.io.IOException;
 import java.sql.*;
 import java.time.LocalDate;
 import java.time.Period;
@@ -108,6 +110,11 @@ public class perfilUsuarioController {
 
     public void inicioClick(ActionEvent actionEvent) {
         DateMeApp.cambiarPestana("mainpage/mainpage.fxml", "DateMe",900,600);
+    }
+
+    @FXML
+    void clickEnviarMensaje(MouseEvent event) throws IOException {
+        DateMeApp.cambiarChat(campoId.getText(),campoImagen.getImage());
     }
     public static void cargarDatosUsuario(String nombreUsuario, Image foto ) {
         try (Connection conn = DriverManager.getConnection("jdbc:sqlite:dateme.db")) {

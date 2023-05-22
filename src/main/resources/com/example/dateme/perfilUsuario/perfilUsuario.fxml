@@ -57,6 +57,24 @@
                   <Font name="System Italic" size="15.0" />
                </font>
             </Label>
+            <Button fx:id="EnviarMensaje" layoutX="275.0" layoutY="375.0" mnemonicParsing="false" onMouseClicked="#clickEnviarMensaje" prefHeight="45.0" prefWidth="200.0" style="-fx-background-color: null;">
+               <graphic>
+                  <Pane prefHeight="37.0" prefWidth="164.0" style="-fx-border-color: black;">
+                     <children>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="10.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../imgs/chat.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="54.0" layoutY="10.0" prefHeight="17.0" prefWidth="150.0" text="Enviar Mensaje">
+                           <font>
+                              <Font name="System Bold Italic" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+               </graphic>
+            </Button>
          </children>
         </Pane>
     </center>
