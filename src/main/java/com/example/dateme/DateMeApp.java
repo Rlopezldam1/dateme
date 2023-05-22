@@ -14,6 +14,7 @@ public class DateMeApp extends Application {
     public static String nombreUsuarioIniciado;
     public static Stage dateMe;
     public void start(Stage stage) throws IOException {
+        SQLiteConnection.main();
         dateMe = stage;
         URL url = getClass().getResource("imgs/cupido.png");
         Image icon = new Image(url.openStream());
@@ -35,7 +36,7 @@ public class DateMeApp extends Application {
         dateMe.setScene(home);
         dateMe.setResizable(false);
         dateMe.show();
-        SQLiteConnection.main(null);
+        SQLiteConnection.main();
     }
 
     public static void cambiarPestana(String ruta, String nombreVentana, int width, int height) {

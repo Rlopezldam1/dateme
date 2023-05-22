@@ -220,14 +220,15 @@ public class SQLiteConnection {
 
 
     // Ejemplo de uso
-    public static void main(String[] args) {
-        Connection connection = conectar();
+    public static void main() {
         String fileName = "dateme.db";
         File file = new File(fileName);
 
         if (!file.exists()) {
             ejecutarScriptSQL("dateme.sql");
+            System.out.println("Script ejecutado");
         }
+        Connection connection = conectar();
     }
 }
 
