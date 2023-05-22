@@ -15,6 +15,7 @@ public class DateMeApp extends Application {
     public static Stage dateMe;
     public void start(Stage stage) throws IOException {
         SQLiteConnection.main();
+        LogGenerator.main();
         dateMe = stage;
         URL url = getClass().getResource("imgs/cupido.png");
         Image icon = new Image(url.openStream());
