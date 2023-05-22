@@ -27,7 +27,7 @@
                   <Font name="System Bold Italic" size="20.0" />
                </font>
             </Label>
-            <Label fx:id="campoId" layoutX="42.0" layoutY="109.0" prefHeight="32.0" prefWidth="355.0" text="idusuario">
+            <Label fx:id="campoId" layoutX="42.0" layoutY="109.0" onMouseClicked="#clickId" prefHeight="32.0" prefWidth="355.0" text="idusuario">
                <font>
                   <Font name="System Italic" size="15.0" />
                </font>

@@ -9,16 +9,20 @@ public class LogGenerator {
         crearArchivoLog();
     }
 
-    public static void escribirLog(String mensaje, LogLevel nivel) throws IOException {
+    public static void escribirLog(String mensaje, LogLevel nivel) {
         File archivo = new File(LOG_FILE_PATH);
-        FileWriter fileWriter = new FileWriter(archivo, true);
-        PrintWriter printWriter = new PrintWriter(fileWriter);
-
-        String timestamp = obtenerTimestamp();
-        String logLine = timestamp + " [" + nivel + "] --> " + mensaje;
-
-        printWriter.println(logLine);
-        printWriter.close();
+        FileWriter fileWriter = null;
+        PrintWriter printWriter = null;
+        try {
+            fileWriter = new FileWriter(archivo, true);
+            printWriter = new PrintWriter(fileWriter);
+            String timestamp = obtenerTimestamp();
+            String logLine = timestamp + " [" + nivel + "] --> " + mensaje;
+            printWriter.println(logLine);
+            printWriter.close();
+        } catch (IOException exception) {
+            exception.printStackTrace();
+        }
     }
 
     private static String obtenerTimestamp() {
