@@ -64,8 +64,8 @@ public class chatsController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        String consultaResultados = SQLiteConnection.ejecutarConsulta("SELECT m.perfil_id, u.foto FROM mensajes m JOIN usuarios u ON m.perfil_id = u.id_usuario where m.user_id = '" + DateMeApp.nombreUsuarioIniciado + "'");
-        consultaResultados += SQLiteConnection.ejecutarConsulta("SELECT m.user_id, u.foto FROM mensajes m JOIN usuarios u ON m.user_id = u.id_usuario where m.perfil_id = '" + DateMeApp.nombreUsuarioIniciado + "'");
+        String consultaResultados = SQLiteConnection.ejecutarConsulta("SELECT DISTINCT m.perfil_id, u.foto FROM mensajes m JOIN usuarios u ON m.perfil_id = u.id_usuario where m.user_id = '" + DateMeApp.nombreUsuarioIniciado + "'");
+        consultaResultados += SQLiteConnection.ejecutarConsulta("SELECT DISTINCT m.user_id, u.foto FROM mensajes m JOIN usuarios u ON m.user_id = u.id_usuario where m.perfil_id = '" + DateMeApp.nombreUsuarioIniciado + "'");
         String[] lineas = consultaResultados.split("\n");
 
         // Recorrer las líneas y separar los campos

@@ -27,6 +27,7 @@ import javafx.scene.paint.Paint;
 
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDateTime;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
@@ -78,6 +79,9 @@ public class MensajesController {
     }
     public static void setNombre(String nombre) {
         nombreProperty.set(nombre);
+    }
+    public static String getNombre() {
+        return nombreProperty.get();
     }
     public static void setImagen(Image imagen) {
         imagenProperty.set(imagen);
@@ -153,6 +157,10 @@ public class MensajesController {
         hbox.getChildren().add(iv);
         label.setStyle("-fx-background-color: lightblue; -fx-background-radius: 10;");
         getVBox().getChildren().add(hbox);
+        LocalDateTime dateTime = LocalDateTime.now();
+        String hora = dateTime.toString();
+        String[] datos = {DateMeApp.nombreUsuarioIniciado, getNombre(), texto, "no leido", hora};
+        SQLiteConnection.ejecutarInsertMensaje(datos);
     }
 
 

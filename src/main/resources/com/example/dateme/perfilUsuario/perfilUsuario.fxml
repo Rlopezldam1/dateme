@@ -12,7 +12,7 @@
     <center>
         <Pane prefHeight="532.0" prefWidth="910.0" style="-fx-background-color: white; -fx-border-color: #6fa0b5;" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="EnviarMensaje" layoutX="275.0" layoutY="348.0" mnemonicParsing="false" onMouseClicked="#clickEnviarMensaje" prefHeight="45.0" prefWidth="200.0" style="-fx-background-color: null;">
+            <Button fx:id="EnviarMensaje" layoutX="275.0" layoutY="348.0" onMouseClicked="#clickEnviarMensaje" prefHeight="45.0" prefWidth="200.0" style="-fx-background-color: null;">
                <graphic>
                   <Pane prefHeight="37.0" prefWidth="164.0" style="-fx-border-color: black;">
                      <children>

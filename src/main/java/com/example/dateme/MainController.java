@@ -130,11 +130,6 @@ public class MainController implements Initializable {
         siguienteUsuario();
     }
 
-    @FXML
-    void clickId(MouseEvent event) throws IOException {
-        DateMeApp.cambiarChat(campoId.getText(),campoImagen.getImage());
-    }
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         while (usuarios.get(posUsuario).equals(GestorUsuarios.usuarioActual)) {
@@ -212,5 +207,9 @@ public class MainController implements Initializable {
 
     public void inicioClick(ActionEvent actionEvent) {
         DateMeApp.cambiarPestana("mainpage/mainpage.fxml","DateMe",900,600);
+    }
+
+    public void clickId(MouseEvent mouseEvent) throws IOException {
+        DateMeApp.cambiarChat(campoId.getText(),campoImagen.getImage());
     }
 }

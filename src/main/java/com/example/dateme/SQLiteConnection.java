@@ -129,25 +129,18 @@ public class SQLiteConnection {
         }
     }
 
-    public static void ejecutarInsert(String nombreTabla, Object[] valores) {
+    public static void ejecutarInsert(String nombreTabla, String[] valores) {
         Connection connection = conectar();
         PreparedStatement preparedStatement = null;
 
         try {
-            // Obtener los metadatos de la tabla para determinar las columnas
-            String sqlMeta = "SELECT * FROM " + nombreTabla + " LIMIT 0";
-            preparedStatement = connection.prepareStatement(sqlMeta);
-            preparedStatement.execute();
-
-            int columnCount = preparedStatement.getMetaData().getColumnCount();
-
             // Construir la sentencia SQL de inserción dinámica
             StringBuilder sql = new StringBuilder();
             sql.append("INSERT INTO ");
             sql.append(nombreTabla);
             sql.append(" VALUES (");
 
-            for (int i = 0; i < columnCount; i++) {
+            for (int i = 0; i < valores.length; i++) {
                 if (i > 0) {
                     sql.append(", ");
                 }
@@ -189,6 +182,61 @@ public class SQLiteConnection {
             }
         }
     }
+    public static void ejecutarInsertMensaje(String[] valores) {
+        Connection connection = conectar();
+        PreparedStatement preparedStatement = null;
+
+        try {
+            // Construir la sentencia SQL de inserción dinámica
+            StringBuilder sql = new StringBuilder();
+            sql.append("INSERT INTO ");
+            sql.append("mensajes");
+            sql.append(" (user_id, perfil_id, mensaje, estado_mensaje, fecha_hora_mesaje)");
+            sql.append(" VALUES (");
+
+            for (int i = 0; i < valores.length; i++) {
+                if (i > 0) {
+                    sql.append(", ");
+                }
+                sql.append("?");
+            }
+
+            sql.append(")");
+
+            // Preparar la sentencia SQL con los valores a insertar
+            preparedStatement = connection.prepareStatement(sql.toString());
+
+            for (int i = 0; i < valores.length; i++) {
+                preparedStatement.setObject(i + 1, valores[i]);
+            }
+
+            // Ejecutar la inserción
+            preparedStatement.executeUpdate();
+
+            System.out.println("La inserción se ha realizado correctamente.");
+
+        } catch (SQLException e) {
+            System.out.println("Error al ejecutar la inserción: " + e.getMessage());
+        } finally {
+            // Cerrar el PreparedStatement y la conexión
+            if (preparedStatement != null) {
+                try {
+                    preparedStatement.close();
+                } catch (SQLException e) {
+                    System.out.println("Error al cerrar el PreparedStatement: " + e.getMessage());
+                }
+            }
+
+            if (connection != null) {
+                try {
+                    connection.close();
+                } catch (SQLException e) {
+                    System.out.println("Error al cerrar la conexión: " + e.getMessage());
+                }
+            }
+        }
+    }
+
     public static String ejecutarConsulta(String consulta) {
         String url = "jdbc:sqlite:dateme.db";
         String resultado = "";

@@ -47,9 +47,6 @@ public class perfilUsuarioController {
     private Button chats;
 
     @FXML
-    private Button EnviarMensaje;
-
-    @FXML
     private Button inicio;
 
     @FXML
@@ -114,16 +111,6 @@ public class perfilUsuarioController {
     public void inicioClick(ActionEvent actionEvent) {
         DateMeApp.cambiarPestana("mainpage/mainpage.fxml", "DateMe",900,600);
     }
-
-    @FXML
-    void clickId(MouseEvent event) throws IOException {
-        DateMeApp.cambiarChat(campoId.getText(),campoImagen.getImage());
-    }
-
-    @FXML
-    void clickEnviarMensaje(MouseEvent event) throws IOException {
-        DateMeApp.cambiarChat(campoId.getText(),campoImagen.getImage());
-    }
     public static void cargarDatosUsuario(String nombreUsuario, Image foto ) {
         try (Connection conn = DriverManager.getConnection("jdbc:sqlite:dateme.db")) {
             String query = "SELECT nombre, apellidos, descripcion, fecha_nacimiento, localidad FROM usuarios WHERE id_usuario = ?";
@@ -150,5 +137,13 @@ public class perfilUsuarioController {
         Period periodo = Period.between(fechaNacimiento, fechaActual);
         int edad = periodo.getYears();
         return String.valueOf(edad);
+    }
+
+    public void clickEnviarMensaje(MouseEvent mouseEvent) throws IOException {
+        DateMeApp.cambiarChat(campoId.getText(),campoImagen.getImage());
+    }
+
+    public void clickId(MouseEvent mouseEvent) throws IOException {
+        DateMeApp.cambiarChat(campoId.getText(),campoImagen.getImage());
     }
 }
