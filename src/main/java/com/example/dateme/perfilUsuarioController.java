@@ -6,6 +6,7 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -13,11 +14,13 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 
 import java.io.IOException;
+import java.net.URL;
 import java.sql.*;
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.ResourceBundle;
 
-public class perfilUsuarioController {
+public class perfilUsuarioController implements Initializable {
 
     @FXML
     private Button ajustes;
@@ -145,5 +148,10 @@ public class perfilUsuarioController {
 
     public void clickId(MouseEvent mouseEvent) throws IOException {
         DateMeApp.cambiarChat(campoId.getText(),campoImagen.getImage());
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        campoImagen.setPreserveRatio(false);
     }
 }
