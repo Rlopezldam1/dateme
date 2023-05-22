@@ -89,13 +89,13 @@ public class MensajesController {
     }
 
     @FXML
-    void icono_principal_click(MouseEvent event) {
-        DateMeApp.cambiarPestana("perfilUsuario/perfilUsuario.fxml", "Usuario",900,600);
+    void icono_principal_click(MouseEvent event) throws IOException {
+        DateMeApp.cambiarADatos(nombre.getText(),iconoPrincipal.getImage());
     }
 
     @FXML
-    void nombre_click(MouseEvent event) {
-        DateMeApp.cambiarPestana("perfilUsuario/perfilUsuario.fxml", "Usuario",900,600);
+    void nombre_click(MouseEvent event) throws IOException {
+        DateMeApp.cambiarADatos(nombre.getText(),iconoPrincipal.getImage());
     }
 
     @FXML

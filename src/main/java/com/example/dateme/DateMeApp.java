@@ -9,6 +9,8 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
 
+import static com.example.dateme.perfilUsuarioController.cargarDatosUsuario;
+
 public class DateMeApp extends Application {
     public static Image fotoUsuario;
     public static String nombreUsuarioIniciado;
@@ -49,6 +51,11 @@ public class DateMeApp extends Application {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public static void cambiarADatos(String nombreUsuario, Image foto) throws IOException {
+        cambiarPestana("perfilUsuario/perfilUsuario.fxml", "Perfil",900,600);
+        cargarDatosUsuario(nombreUsuario,foto);
     }
     public static void cambiarChat(String nombreUsuario, Image foto) throws IOException {
         cambiarPestana("mensajes/mensajes.fxml", "Mensajes",900,600);
